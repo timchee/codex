@@ -1,5 +1,5 @@
 :root {
-  --max-width: 1100px;
+  /* --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
@@ -32,17 +32,17 @@
     #00000010,
     #00000010,
     #00000080
-  );
-
+  ); */
+  /* 
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+  --card-border-rgb: 131, 134, 135; */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    /* --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
 
@@ -69,7 +69,7 @@
     --callout-rgb: 20, 20, 20;
     --callout-border-rgb: 108, 108, 108;
     --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+    --card-border-rgb: 200, 200, 200; */
   }
 }
 
@@ -104,4 +104,67 @@ a {
   html {
     color-scheme: dark;
   }
+}
+body {
+  font-family: inter;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 62px;
+  font-size: 20px;
+  color: #173163;
+  align-items: center;
+  font-weight: 400;
+  padding: 10px 60px;
+}
+
+.navbar__menu {
+  display: flex;
+  width: 100%;
+}
+.navbar__menu ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.navbar__menu ul li {
+  text-decoration: none;
+  list-style: none;
+  line-height: 19.36px;
+}
+.navbar__search {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  /* padding-right: 67.44px; */
+}
+.login {
+  gap: 20px;
+  display: flex;
+}
+
+.navbar__search button {
+  font-size: 20px;
+  font-size: 13px;
+  padding: 8px 16px;
+  background-color: #edeff3;
+  box-shadow: none;
+  border: none;
+  border-radius: 4px;
+}
+.navbar__search button:nth-child(2) {
+  background-color: white;
+}
+.navbar__search input {
+  font-size: 20px;
+  padding-left: 12px;
+  width: 260px;
+  height: 40px;
+  border-radius: 36px;
+  border: 1px solid #e0e5eb;
 }
