@@ -42,6 +42,14 @@
   --font-bold: 700;
 
   --border-main: 1px solid #dadfe7;
+
+
+
+  /* ------------HEADER COLORS------------- */
+
+
+  --header-main-color: #0E234D;
+
 }
 
 * {

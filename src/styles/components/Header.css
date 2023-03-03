@@ -1,8 +1,8 @@
 .header{
-    background-color:#0E234D;
+    background-color: var(--header-main-color);
     width: 100vw;
-    height: auto;
-    padding: 5% 12%;
+    height: 336px;
+    padding: 0% 15%;
     color: #ffffff;
     display: flex;
     max-height: 450px;
@@ -34,11 +34,15 @@
     width: fit-content;
     background-color: #ffffff;
     border-radius: 30px;
-    border: 0px;
+    border: 1px solid #ffffff;
     font-size: 14px;
     line-height: 17px;
     font-weight: 500;
-
+    transition: 0.2s;
+}
+.header__description button:hover {
+    background-color: var(--header-main-color);
+    color: #ffffff;
 }
 .header__logo{
     width: 100%;
@@ -48,35 +52,26 @@
 }
 .header__logo--logo{
     background-image: url("../images/logo-favicon.png");
-    width: 252px;
-    height: 352px;
+    width: 220px;
+    height: 320px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    /* position: absolute; */
     right: 260px;
     overflow: hidden;
 }
-/* .header__logo h1{
-    font-size: 250px;
-    position: absolute;
-    right: 10%;
-    top: 2.5%;
-} */
 
-.header__logo--shadow {
+.header__logo--logo::before {
+    content: "";
     background-image: url("../images/logo-blured.png");
     background-repeat: no-repeat;
     width: 450px;
-    height: 550px;
+    height: 450px;
     position: absolute;
     background-position: center center;
     background-size: contain;
-    right: -1%;
-    top: 0;
+    top: 1%;
+    right: -2%;
 }
 
-/* .header__logo--shadow h1::after{
-    content: "";
-    background-color: rgba(0,0,0,1);
-} */
