@@ -4,9 +4,11 @@
 
 :root {
   --max-width: 1140px;
-
-  --docs-body: #818FAB;
-  --docs-paragraph: #455A82;
+  
+  --body-main-color: #F5F5F5;
+  --body-docs-color: #818FAB;
+  --heading-color: #173163;
+  --paragraph-color: #455A82;
 
   --font-light: 300;
   --font-regular: 400;
@@ -21,13 +23,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
 body {
-  max-width: 100vw;
+  /* max-width: 100vw; */
   overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {

@@ -1,16 +1,23 @@
 .quick-links {
     max-width: var(--max-width);
     margin: auto;
+    margin-bottom: 63px;
+}
+
+.quick-links__title {
+    margin-bottom: 20px;
+    color: var(--heading-color);
 }
 
 .quick-links__items {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-    color: var(--docs-paragraph);
+    color: var(--paragraph-color);
 }
 
 .quick-links__items__item {
     display: flex;
     flex-direction: column;
+    gap: 14px;
 }

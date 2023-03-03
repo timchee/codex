@@ -7,50 +7,74 @@ export default function QuickLinks() {
                 Quick Links
             </h4>
             <div className="quick-links__items">
-                <div className="quick-links__items__item">
-                    <Link href="/">
-                        Getting to know codex
-                    </Link>
-                    <Link href="/">
-                        Codex Playground
-                    </Link>
-                    <Link href="/">
-                        Plugins
-                    </Link>
-                </div>
-                <div className="quick-links__items__item">
-                    <Link href="/">
-                        Getting to know codex
-                    </Link>
-                    <Link href="/">
-                        Codex Playground
-                    </Link>
-                    <Link href="/">
-                        Plugins
-                    </Link>
-                </div>
-                <div className="quick-links__items__item">
-                    <Link href="/">
-                        Getting to know codex
-                    </Link>
-                    <Link href="/">
-                        Codex Playground
-                    </Link>
-                    <Link href="/">
-                        Plugins
-                    </Link>
-                </div>
-                <div className="quick-links__items__item">
-                    <Link href="/">
-                        Getting to know codex
-                    </Link>
-                    <Link href="/">
-                        Codex Playground
-                    </Link>
-                    <Link href="/">
-                        Plugins
-                    </Link>
-                </div>
+                <ul className="quick-links__items__item">
+                    <li>
+                        <Link href="/">
+                            Getting to know codex
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Codex Playground
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Plugins
+                        </Link>
+                    </li>
+                </ul>
+                <ul className="quick-links__items__item">
+                    <li>
+                        <Link href="/">
+                            Getting to know codex
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Codex Playground
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Plugins
+                        </Link>
+                    </li>
+                </ul>
+                <ul className="quick-links__items__item">
+                    <li>
+                        <Link href="/">
+                            Getting to know codex
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Codex Playground
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Plugins
+                        </Link>
+                    </li>
+                </ul>
+                <ul className="quick-links__items__item">
+                    <li>
+                        <Link href="/">
+                            Getting to know codex
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Codex Playground
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Plugins
+                        </Link>
+                    </li>
+                </ul>
             </div>
         </div>
     )
