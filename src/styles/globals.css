@@ -1,5 +1,6 @@
 @import url('./components/QuickLinks.css');
 @import url('./components/Footer.css');
+@import url('./components/Navbar.css');
 
 :root {
   --max-width: 1140px;
