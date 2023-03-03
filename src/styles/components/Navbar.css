@@ -46,7 +46,7 @@
   border-radius: 4px;
 }
 .navbar__search button:nth-child(2) {
-  background-color: white;
+  background-color: var(--body-main-color);
 }
 .navbar__search input {
   font-size: 20px;
