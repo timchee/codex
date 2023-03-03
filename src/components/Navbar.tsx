@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+// import "../styles/globals.css";
 // import GjIcon from "@gjirafatech/gjirafa-icons/GjIcon";
 
 function transition(genreName: string): HTMLCollectionOf<Element> {

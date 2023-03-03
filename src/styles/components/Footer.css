@@ -1,0 +1,21 @@
+footer {
+    border: var(--border-main);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: auto;
+    font-size: 12px;
+    height: 55px;
+    align-items: center;
+    color: var(--body-docs-color)
+}
+
+.footer__links {
+    display: flex;
+    text-align: end;
+    gap: 22px;
+    font-weight: var(--font-regular);
+}
