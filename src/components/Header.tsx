@@ -9,10 +9,8 @@ export function Headers(){
             <button>Get Started</button>
         </div>
         <div className="header__logo">
-            <div className="header__logo--shadow">
-                <h1>&alefsym;</h1>
-            </div>
-            <h1>&alefsym;</h1>
+            <div className="header__logo--logo"></div>
+            <div className="header__logo--shadow"></div>            
         </div>
     </div>
     )
