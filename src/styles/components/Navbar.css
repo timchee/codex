@@ -7,8 +7,20 @@
   align-items: center;
   font-weight: 400;
   padding: 10px 60px;
+  max-width: 1880px;
 }
-
+.navbar__logo{
+  background-image: url("../images/logo.png");
+  width: 250px;
+  height: 60px;
+  margin-right: 50px;
+  margin-top: -5px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
 .navbar__menu {
   display: flex;
   width: 100%;
@@ -49,7 +61,7 @@
   background-color: var(--body-main-color);
 }
 .navbar__search input {
-  font-size: 20px;
+  font-size: 16px;
   padding-left: 12px;
   width: 260px;
   height: 40px;
