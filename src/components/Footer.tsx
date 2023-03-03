@@ -7,14 +7,18 @@ export default function Footer() {
                 <div className="footer__copyright">
                     With love, by the Codex team - © GjirafaTech 2022
                 </div>
-                <div className="footer__links">
-                    <Link href="/">
-                        Privacy Policy
-                    </Link>
-                    <Link href="/">
-                        Contact Us
-                    </Link>
-                </div>
+                <ul className="footer__links">
+                    <li>
+                        <Link href="/">
+                            Privacy Policy
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Contact Us
+                        </Link>
+                    </li>
+                </ul>
             </div>
         </footer>
     )

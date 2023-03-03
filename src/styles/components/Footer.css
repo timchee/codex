@@ -10,7 +10,7 @@ footer {
     font-size: 12px;
     height: 55px;
     align-items: center;
-    color: var(--docs-body)
+    color: var(--body-docs-color)
 }
 
 .footer__links {
