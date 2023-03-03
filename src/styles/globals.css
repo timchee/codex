@@ -1,14 +1,14 @@
-@import url('./components/QuickLinks.css');
-@import url('./components/Footer.css');
-@import url('./components/Navbar.css');
+@import url("./components/QuickLinks.css");
+@import url("./components/Footer.css");
+@import url("./components/Navbar.css");
 
 :root {
   --max-width: 1140px;
-  
-  --body-main-color: #F5F5F5;
-  --body-docs-color: #818FAB;
+
+  --body-main-color: #f5f5f5;
+  --body-docs-color: #818fab;
   --heading-color: #173163;
-  --paragraph-color: #455A82;
+  --paragraph-color: #455a82;
 
   --font-light: 300;
   --font-regular: 400;
@@ -16,7 +16,31 @@
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  --border-main: 1px solid #DADFE7;
+  --border-main: 1px solid #dadfe7;
+
+  --max-width: 1140px;
+
+  --body-main-color: #f5f5f5;
+  --body-docs-color: #818fab;
+
+  --color-heading: #173163;
+  --color-paragraph: #455a82;
+
+  --ifm-color-primary-lightest: #608fe8;
+  --ifm-color-primary-lighter: #3f78e3;
+  --ifm-color-primary-light: #3470e1;
+  --ifm-color-primary: #2061dc;
+  --ifm-color-primary-dark: #1d57c6;
+  --ifm-color-primary-darker: #1b52bb;
+  --ifm-color-primary-darkest: #16449a;
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  --border-main: 1px solid #dadfe7;
 }
 
 * {
