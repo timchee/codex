@@ -51,21 +51,21 @@
 }
 
 .technical-categories__item:nth-child(1) .technical-categories__item-image {
-    background-image: url('../../images/technical-categories/technical-1.svg');
+    background-image: url('../../images/svg/codex-api.svg');
 }
 
 .technical-categories__item:nth-child(2) .technical-categories__item-image {
-    background-image: url('../../images/technical-categories/technical-2.svg');
+    background-image: url('../../images/svg/codex-editor.svg');
 }
 
 .technical-categories__item:nth-child(3) .technical-categories__item-image {
-    background-image: url('../../images/technical-categories/technical-3.svg');
+    background-image: url('../../images/svg/codex-graphql.svg');
 }
 
 .technical-categories__item:nth-child(4) .technical-categories__item-image {
-    background-image: url('../../images/technical-categories/technical-4.svg');
+    background-image: url('../../images/svg/codex-plugins.svg');
 }
 
 .technical-categories__item:nth-child(5) .technical-categories__item-image {
-    background-image: url('../../images/technical-categories/technical-4.svg');
+    background-image: url('../../images/svg/codex-plugins.svg');
 }
