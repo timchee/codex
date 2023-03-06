@@ -50,11 +50,15 @@ export default function Navbar() {
 
         <div className="navbar__search">
           <div className="search">
+            <i className="material-icons">search</i>
             <input type="text" placeholder="Quick Search" />
           </div>
           <div className="login">
             <button>Log In</button>
-            <button>Sign Up</button>
+            <button>
+              Sign Up
+              <span className="material-symbols-outlined">open_in_new</span>
+            </button>
           </div>
         </div>
       </div>

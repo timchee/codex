@@ -5,7 +5,7 @@
     /* padding: 0% 15%; */
     color: #ffffff;
     display: flex;
-    height: 450px;
+    height: 490px;
     max-width: var(--max-width) !important;
     margin: auto;
 }
@@ -30,6 +30,7 @@
 
 .header__description h1{
     font-size: 32px;
+    color: #ffffff;
 }
 .header__description p{
     font-size: 18px;

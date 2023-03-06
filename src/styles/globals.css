@@ -2,9 +2,13 @@
 @import url('./components/MostPopular.css');
 @import url('./components/QuickLinks.css');
 @import url('./components/Footer.css');
+@import url('./components/Header.css');
+@import url('./components/Navbar.css');
 
 :root {
   --max-width: 1140px;
+  --ifm-color-primary: #1D58C8;
+  --header-main-color: #0E234D;
 
   --body-main-color: #F5F5F5;
   --body-docs-color: #818FAB;
@@ -31,6 +35,7 @@
   --border-card: 1px solid #EDEFF3;
 
   --shadow-card: 0px 8px 18px rgba(76, 58, 99, 0.06);
+
 }
 
 * {
