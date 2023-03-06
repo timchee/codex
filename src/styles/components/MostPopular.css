@@ -77,3 +77,27 @@
 .most-popular__card-content__link p {
     font-size: 12px;
 }
+@media screen and (max-width: 600px) {
+    .most-popular{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .most-popular__title{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 5%;
+    }
+    .most-popular__cards{
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .most-popular__card{
+        width: 90vw;
+    }
+}
