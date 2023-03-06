@@ -19,3 +19,7 @@ footer {
     gap: 22px;
     font-weight: var(--font-regular);
 }
+
+.footer__links a:hover {
+    color: var(--ifm-color-primary-lightest);
+}
