@@ -46,6 +46,8 @@
 .login {
   gap: 20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar__search button {
@@ -56,15 +58,49 @@
   box-shadow: none;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
-.navbar__search button:nth-child(2) {
+.navbar__search .login button:nth-child(2) {
   background-color: var(--body-main-color);
+  display: flex;
+  color: #455A82;
+  font-size: 13px;
+  line-height: 16px;
 }
-.navbar__search input {
+.navbar__search .search {
+  display: flex;
+  align-items: center;
   font-size: 16px;
   padding-left: 12px;
   width: 260px;
   height: 40px;
   border-radius: 36px;
   border: 1px solid #e0e5eb;
+}
+.navbar__search .search input{
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding-left: 5px;
+  width: 260px;
+  height: 40px;
+  border-radius: 36px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.material-icons{
+  color: rgba(0, 0, 0, 0.5);
+}
+.material-symbols-outlined{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: rgba(0, 0, 0, 0.5);
+}
+.login button:nth-child(1){
+  color: var(--ifm-color-primaryfm);
+  font-size: 13px;
+  line-height: 16px;
 }

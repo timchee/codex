@@ -5,6 +5,7 @@
 
 :root {
   --max-width: 1140px;
+  --ifm-color-primary: #1D58C8;
 
   --body-main-color: #F5F5F5;
   --body-docs-color: #818FAB;
