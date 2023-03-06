@@ -19,5 +19,27 @@
 .quick-links__items__item {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 8px;
+}
+@media screen and (max-width: 600px) {
+    .quick-links{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+    .quick-links__title{
+        padding: 2%;
+    }
+    .quick-links__items{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 50px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2%;
+        column-gap: 35px;
+    }
+    .quick-links__items__item{
+        max-width: 150px;
+    }
 }

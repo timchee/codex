@@ -61,6 +61,9 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+        <div className="menu">
+          <span className="material-symbols-outlined">menu</span>
+        </div>
       </div>
     </>
   );
