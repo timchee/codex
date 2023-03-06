@@ -106,3 +106,45 @@
   font-size: 13px;
   line-height: 16px;
 }
+.material-symbols-outlined{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar{
+    width: 100vw;
+    padding: 2%;
+    display: flex;
+    justify-content: space-around !important;
+  }
+  .navbar__logo{
+    /* display: none; */
+    max-width: 100px;
+  }
+  .navbar__menu{
+    display: none;
+  }
+  .navbar__search{
+    width: 300px;
+    justify-content: center;
+
+  }
+  .search{
+    width: 180px !important;
+    overflow: hidden;
+  }
+  .login{
+    display: none;
+  }
+  .material-symbols-outlined{
+    font-size: 30px;
+    display: flex;
+  }
+  /* .login button{
+    display: none;
+  }
+  .login button:nth-child(2){
+    display: none !important;
+  } */
+
+}

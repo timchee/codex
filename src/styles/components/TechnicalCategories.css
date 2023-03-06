@@ -68,4 +68,23 @@
 
 .technical-categories__item:nth-child(5) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-plugins.svg');
+
+    background-image: url('../../images/technical-categories/technical-4.svg');
+}
+
+@media screen and (max-width: 600px) {
+    
+    .technical-categories__title{
+        padding-left: 5%;
+
+    }
+    .technical-categories__items{
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        flex-direction: column;        
+    }
+    .technical-categories__item{
+        width: 90vw;
+    }
 }
