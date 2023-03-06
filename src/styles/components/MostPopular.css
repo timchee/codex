@@ -1,0 +1,79 @@
+.most-popular {
+    max-width: var(--max-width);
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+.most-popular__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.most-popular__title {
+    color: var(--color-heading);
+    margin-bottom: 20px;
+}
+
+.most-popular__card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    border: var(--border-card);
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: transform .2s ease-out;
+}
+
+.most-popular__card:hover {
+    transform: translateY(-4px);
+}
+
+.most-popular__card-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110px;
+}
+
+.most-popular__card:nth-child(1) .most-popular__card-image {
+    background-image: url('../../images/most-popular/plugin.png');
+}
+
+.most-popular__card:nth-child(2) .most-popular__card-image {
+    background-image: url('../../images/most-popular/graphql.png');
+}
+
+.most-popular__card:nth-child(3) .most-popular__card-image {
+    background-image: url('../../images/most-popular/api.png');
+}
+
+.most-popular__card-content {
+    padding: 23px;
+}
+
+.most-popular__card-content h6 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.most-popular__card-content p {
+    color: var(--color-paragraph);
+}
+
+.most-popular__card-content__description {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.most-popular__card-content__link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.most-popular__card-content__link p {
+    font-size: 12px;
+}
