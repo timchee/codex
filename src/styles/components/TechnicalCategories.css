@@ -76,7 +76,8 @@
 @media screen and (max-width: 600px) {
     
     .technical-categories__title{
-        padding: 2%;
+        padding-left: 5%;
+
     }
     .technical-categories__items{
         display: flex;

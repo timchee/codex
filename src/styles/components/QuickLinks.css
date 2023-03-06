@@ -26,6 +26,8 @@
         width: 100vw;
         display: flex;
         flex-direction: column;
+        padding-left: 5%;
+
     }
     .quick-links__title{
         padding: 2%;

@@ -87,13 +87,15 @@
     .head{
         width: 100vw;
         overflow: hidden;
-        padding: 0;
+        padding-left: 5%;
+        height: 400px;
     }
     .header{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 2%;
+        width: 100vw;
+        /* padding: 2%; */
     }
     .header__description h1{
         font-size:medium;
