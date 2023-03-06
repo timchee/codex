@@ -10,68 +10,68 @@ export default function QuickLinks() {
                 <ul className="quick-links__items__item">
                     <li>
                         <Link href="/">
-                            Getting to know codex
+                            Entries API
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            Codex Playground
+                            Articles API
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            Plugins
-                        </Link>
-                    </li>
-                </ul>
-                <ul className="quick-links__items__item">
-                    <li>
-                        <Link href="/">
-                            Getting to know codex
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/">
-                            Codex Playground
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/">
-                            Plugins
+                            Sections API
                         </Link>
                     </li>
                 </ul>
                 <ul className="quick-links__items__item">
                     <li>
                         <Link href="/">
-                            Getting to know codex
+                            Create a custom page
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            Codex Playground
+                            Create a custom block
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            Plugins
+                            Create a custom field
                         </Link>
                     </li>
                 </ul>
                 <ul className="quick-links__items__item">
                     <li>
                         <Link href="/">
-                            Getting to know codex
+                            Paragraph block
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            Codex Playground
+                            Image block
                         </Link>
                     </li>
                     <li>
                         <Link href="/">
-                            Plugins
+                            Embeds block
+                        </Link>
+                    </li>
+                </ul>
+                <ul className="quick-links__items__item">
+                    <li>
+                        <Link href="/">
+                            Heading block
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            Table block
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/">
+                            VP Player block
                         </Link>
                     </li>
                 </ul>

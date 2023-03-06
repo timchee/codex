@@ -77,6 +77,28 @@
 .most-popular__card-content__link p {
     font-size: 12px;
 }
+
+.most-popular__card-content__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 15px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.most-popular__card:nth-child(1) .most-popular__card-content__image {
+    background-image: url('../../images/svg/codex-plugins.svg');
+}
+
+.most-popular__card:nth-child(2) .most-popular__card-content__image {
+    background-image: url('../../images/svg/codex-graphql.svg');
+}
+
+.most-popular__card:nth-child(3) .most-popular__card-content__image {
+    background-image: url('../../images/svg/codex-api.svg');
+}
 @media screen and (max-width: 600px) {
     .most-popular{
         display: flex;
