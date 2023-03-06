@@ -28,8 +28,7 @@
     color: var(--ifm-color-primary-lightest);
 }
 
-    gap: 8px;
-}
+    
 @media screen and (max-width: 600px) {
     .quick-links{
         width: 100vw;
