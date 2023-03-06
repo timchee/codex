@@ -7,7 +7,9 @@
   align-items: center;
   font-weight: 400;
   padding: 10px 60px;
-  max-width: 1880px;
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
 }
 .navbar__logo{
   background-image: url("../images/logo.png");

@@ -2,6 +2,7 @@
     max-width: var(--max-width);
     margin: auto;
     margin-bottom: 70px;
+    margin-top: 50px;
 }
 
 .technical-categories__title {
