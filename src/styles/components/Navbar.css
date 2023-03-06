@@ -10,6 +10,7 @@
   position: fixed;
   background-color: #fff;
   width: 100%;
+  border-bottom: var(--border-main);
 }
 .navbar__logo{
   background-image: url("../images/logo.png");

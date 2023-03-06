@@ -1,6 +1,8 @@
 // import "../styles/globals.css";
 // import GjIcon from "@gjirafatech/gjirafa-icons/GjIcon";
 
+import Link from "next/link";
+
 function transition(genreName: string): HTMLCollectionOf<Element> {
   let i: number;
   let tabcontent: HTMLCollectionOf<Element> =
@@ -40,11 +42,21 @@ export default function Navbar() {
         <div className="navbar__logo"></div>
         <div className="navbar__menu">
           <ul>
-            <li className="nav">Welcome</li>
-            <li className="nav">User Guide</li>
-            <li className="nav">Technical</li>
-            <li className="nav">Playground</li>
-            <li className="nav">Release Notes</li>
+            <li className="nav">
+              <Link href="../../pages/userGuide">Welcome</Link>
+            </li>
+            <li className="nav">
+              <Link href="">User Guide</Link>
+            </li>
+            <li className="nav">
+              <Link href="">Technical</Link>
+            </li>
+            <li className="nav">
+              <Link href="">Playground</Link>
+            </li>
+            <li className="nav">
+              <Link href="">Release Notes</Link>
+            </li>
           </ul>
         </div>
 

@@ -3,7 +3,7 @@ export function Headers() {
     <div className="head">
       <div className="header">
         <div className="header__description">
-          <h1>Technical Documentation</h1>
+          <h1>Welcome to Codex!</h1>
           <p>
             Browse the latest developer documentation including tutorials,
             sample code, articles and API references.
