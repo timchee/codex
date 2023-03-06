@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function QuickLinks() {
     return (
-        <div className="quick-links">
-            <h4 className="quick-links__title">
+        <section className="quick-links">
+            <h5 className="quick-links__title">
                 Quick Links
-            </h4>
+            </h5>
             <div className="quick-links__items">
                 <ul className="quick-links__items__item">
                     <li>
@@ -76,6 +76,6 @@ export default function QuickLinks() {
                     </li>
                 </ul>
             </div>
-        </div>
+        </section>
     )
 }
