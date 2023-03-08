@@ -101,7 +101,6 @@ export default function UserGuide(props: Props) {
             <p>Welcome - What is Codex - Statrting </p>
           </div>
         </main>
-
         <section className="right--section">
           <div className="right--section__content">
             <h1>Currently viewing</h1>
