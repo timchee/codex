@@ -4,6 +4,7 @@
 import Link from "next/link";
 
 export default function Navbar() {
+  
   return (
     <>
       <div className="navbar">
@@ -13,19 +14,19 @@ export default function Navbar() {
         <div className="navbar__menu">
           <ul>
             <li className="navbar__link">
-              <Link href="/">Welcome</Link>
+              <Link href="/" className="navLink">Welcome<div className="active"></div></Link>
             </li>
             <li className="navbar__link">
-              <Link href="/Userguide">User Guide</Link>
+              <Link href="/Userguide" className="navLink">User Guide<div className="active"></div></Link>
             </li>
             <li className="navbar__link">
-              <Link href="">Technical</Link>
+              <Link href="" className="navLink">Technical<div className="active"></div></Link>
             </li>
             <li className="navbar__link">
-              <Link href="">Playground</Link>
+              <Link href="" className="navLink">Playground<div className="active"></div></Link>
             </li>
             <li className="navbar__link">
-              <Link href="">Release Notes</Link>
+              <Link href="" className="navLink">Release Notes<div className="active"></div></Link>
             </li>
           </ul>
         </div>

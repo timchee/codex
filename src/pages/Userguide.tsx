@@ -1,23 +1,11 @@
 import Navbar from "../components/Navbar";
 import Head from "next/head";
-
+import { StyleHTMLAttributes } from "react";
 
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
 
 
-function moveElementOnScroll(span: HTMLElement, scrollRange: number) {
-  const screenWidth = window.innerWidth;
-  const elementWidth = span.offsetWidth;
-  const maxScroll = scrollRange - screenWidth;
-  
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollX;
-    let newPos = (scrollPos / maxScroll) * (screenWidth - elementWidth);
-    newPos = Math.min(Math.max(newPos, 0), screenWidth - elementWidth);
-    span.style.transform = `translateX(${newPos}px)`;
-  });
-}
 
 interface Props {
   hidden: string;
@@ -44,7 +32,7 @@ export default function UserGuide(props: Props) {
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        ></link>
+        />
 
         <link
           rel="stylesheet"
@@ -73,7 +61,7 @@ export default function UserGuide(props: Props) {
             <h3>Welcome</h3>
             <div className="span--div">
               <div className={`span ${isClassAdded ? "hidden" : ""}`}>
-                <div className="small--span"></div>
+                <div className="small--span" id="small--span"></div>
               </div>
               <div className="lists">
                 <div onClick={handleClick} id="list-one">
