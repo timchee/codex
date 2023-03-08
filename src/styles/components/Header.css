@@ -72,15 +72,15 @@
 
 .header__logo--logo::before {
     content: "";
-    background-image: url("../images/logo-blured.png");
+    background-image: url("../../images/header/logo.png");
     background-repeat: no-repeat;
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
     position: absolute;
     background-position: center center;
     background-size: contain;
-    top: 3%;
-    right: -2%;
+    top: 4%;
+    right: 0%;
 }
 
 @media screen and (max-width: 600px) {
