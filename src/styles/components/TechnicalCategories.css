@@ -68,8 +68,6 @@
 
 .technical-categories__item:nth-child(5) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-plugins.svg');
-
-    background-image: url('../../images/technical-categories/technical-4.svg');
 }
 
 @media screen and (max-width: 600px) {

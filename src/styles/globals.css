@@ -4,11 +4,19 @@
 @import url('./components/Footer.css');
 @import url('./components/Header.css');
 @import url('./components/Navbar.css');
+@import url('./components/UserGuide.css');
 
 :root {
   --max-width: 1140px;
   --ifm-color-primary: #1D58C8;
+  --ifm-color-secondary: #455A82;
   --header-main-color: #0E234D;
+
+  
+  --section-border: #DADFE7;
+  --search-background: #F6F8F9;
+  --section-welcome: #7483A1;
+
 
   --body-main-color: #F5F5F5;
   --body-docs-color: #818FAB;

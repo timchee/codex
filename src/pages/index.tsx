@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/google-font-display */
 /* eslint-disable react/no-children-prop */
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import QuickLinks from '@/components/QuickLinks'
@@ -25,9 +24,12 @@ export default function Home() {
         {/* <link rel="icon" href="" /> */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" ></link>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      
       </Head>
         <Navbar />
         <main className={styles.main}>
+          
           <Headers />
         </main>
         <TechnicalCategories />
