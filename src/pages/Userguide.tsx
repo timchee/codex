@@ -1,11 +1,15 @@
 import Navbar from "../components/Navbar";
 import Head from "next/head";
 import { StyleHTMLAttributes } from "react";
-
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql,
+} from "@apollo/client";
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
-
-
+import MainPage from "./Main";
 
 interface Props {
   hidden: string;
@@ -67,7 +71,7 @@ export default function UserGuide(props: Props) {
                 <div onClick={handleClick} id="list-one">
                   {/* {React.cloneElement(element, { className: isClassAdded ? hidden : '' })} */}
                   <h2>
-                    What is Codex{" "}
+                    What is Codex
                     <span
                       id="arrow"
                       className={`material-symbols-outlined ${
@@ -86,9 +90,12 @@ export default function UserGuide(props: Props) {
                   }`}
                 >
                   <ul>
-                    <li>How to get started</li>
-                    <li>Create your first organization</li>
-                    <li>Create your first page</li>
+                    <a href="#what-is-codex">How to get started</a>
+                    <a href="#organization">Create your first organization</a>
+                    <li>
+                      {" "}
+                      <a href="#first-page">Create your first page</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -96,11 +103,8 @@ export default function UserGuide(props: Props) {
           </div>
         </section>
 
-        <main className="main">
-          <div className="main--content">
-            <p>Welcome - What is Codex - Statrting </p>
-          </div>
-        </main>
+        <MainPage />
+
         <section className="right--section">
           <div className="right--section__content">
             <h1>Currently viewing</h1>
@@ -108,7 +112,7 @@ export default function UserGuide(props: Props) {
               <li>What is Codex</li>
               <li>How to get started</li>
               <li>Create your first organization</li>
-              <li>create your first page</li>
+              <li>Create your first page</li>
             </ul>
           </div>
         </section>
