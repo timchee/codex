@@ -11,7 +11,6 @@
   z-index: 9;
   bottom: 0;
   background-color: #fff;
-
 }
 
 .left--section__search {
@@ -28,7 +27,7 @@
   font-size: 24px;
 }
 .left--section input {
-   width: 260px;
+  width: 260px;
   height: 45px;
   font-size: 16px;
   outline: none;
@@ -75,10 +74,10 @@
   width: 100%;
   justify-content: space-between;
   width: 100%;
-    position: relative;
-    margin-left: -20px;
-    padding: 0 20px;
-    cursor: pointer;
+  position: relative;
+  margin-left: -20px;
+  padding: 0 20px;
+  cursor: pointer;
 }
 
 .span--div {
@@ -91,89 +90,229 @@
 .span {
   width: 1px;
   height: 150px;
-  background-color: #C8D0DA;
+  background-color: #c8d0da;
   transform-origin: 0px 0px;
   transition: 0.5s;
 }
-#list-two {
+.left--section__components__selection {
   font-size: 15px;
   color: #818fab;
   display: flex;
 }
-#list-two ul{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.left--section__components__selection ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .hidden {
   transform: translate(0px, -150px);
 }
-.small--span{
-    width: 3px;
-    height: 25px;
-    border-radius: 3px;
-    background-color: #1D58C8;
-
+.small--span {
+  width: 3px;
+  height: 25px;
+  border-radius: 3px;
+  background-color: #1d58c8;
 }
-#arrow{
-    transition: 0.5s;
-    margin-right: -15px;
-    display: block;
+#arrow {
+  transition: 0.5s;
+  margin-right: -15px;
+  display: block;
 }
-.arrow{
-    transform: rotate(90deg);
+.arrow {
+  transform: rotate(90deg);
 }
-
-
-
 
 /* /////////////////// MAIN /////////////////////*/
 
-
-
-.main{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    padding-top: 119px;
-    /* align-items: center; */
+.mainPage{
+  display: flex;
+  flex-direction: column;
+  margin-top: 119px;
+  align-items: center;
+  color: #173163;
+  gap: 32px;
+  padding: 0px 535px;
 }
-
-.main--content{
-    width: 900px;
-    /* background-color: #1D58C8; */
+.main--section__content{
+  width: 850px;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
+.mainPage--routings{
+  width: 850px;
+  max-width: 850px;
+  display: flex;
+  gap: 8px;
+}
+.mainPage--routings p:nth-child(3){
+  color: #A3B0C2;
+}
+.main--section__content__description{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.main--section__content__code{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.code--one__description{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 
+}
+.one{
+  width:3%;
+  height: 24px;
+  font-size:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 6px rgba(22, 22, 22, 0.16);
+  border-radius: 5px;
+  margin-top: 8px;
+}
+.main--section__content__code__code-one{
+  display: flex;
+  gap: 32px;
+  position: relative;
+}
+.code--one__image{
+  background-image: url("../../styles/images/light-code.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 510px;
+  background-size: cover;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 15px;
+}
+.code--two__image{
+  background-image: url("../../styles/images/dark-code.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 510px;
+  background-size: cover;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 15px;
+}
+.code__span{
+  width: 1px;
+  height: 210px;
+  background-color: var(--code-span);
+  display: flex;
+  position: absolute;
+  margin-top: 45px;
+  margin-left: 10px;
+}
+.code__span div:nth-child(1){
+  width: 5px;
+  height: 5px;
+  background-color: var(--code-span);
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  border-radius: 50%;
+}
+.blue--notification{
+ background-color: #F0F9FD;
+ display: flex;
+ border-radius: 4px;
+ overflow: hidden;
 
+}
+.blue--notification__sidebar{
+  width: 2px;
+  background-color: #619AF8;
+}
+.blue--notification__content{
+  margin: 21px 19px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.blue--notification__content p:nth-child(1){
+  color: #3A81F6;
+}
+.blue--notification i{
+  font-size: 20px;
+}
+.writing--code{
+  display: flex;
+  flex-direction: column;
+  width: 850px;
+}
+.writing--code__content{
+  width: 100%;
+  /* display: flex; */
+  gap: 15px;
+}
+.writing--code__paragraph{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.chocolate--bar{
+  padding: 0px 6px;
+  background-color: #F6F8F9;
+  border-radius: 2px;
+}
+.writing--code__image{
+  background-image: url("../../styles/images/writing-code.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 252px;
+  margin-top: 36px;
+
+}
+.back--to{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #7483A1;
+  /* max-width: 850px; */
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 
 /* ////////////////// RIGHT SECTION ///////////////////////// */
 
+.right--section {
+  width: 350px;
+  /* height: 90vh; */
+  background-color: #ffffff;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-top: 119px;
+  /* border-left: 1px solid var(--section-border); */
+}
+.right--section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+.right--section__content h1 {
+  font-size: 15px;
+  color: #7483a1;
+}
+.right--section__content ul {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #818fab;
+}
 
-.right--section{
-    width: 350px;
-    height: 90vh;
-    background-color: #ffffff;
-    position: fixed;
-    right: 0;
-    top: 0;
-    padding-top: 119px;
-    /* border-left: 1px solid var(--section-border); */
-}
-.right--section__content{
-    display: flex;
-    flex-direction: column;
-    gap: 23px;
-}
-.right--section__content h1{
-    font-size: 15px;
-    color: #7483A1;
-}
-.right--section__content ul{
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    color: #818fAB;
-}
+
+/* ///////////// FOOTER //////////////// */
 

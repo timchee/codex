@@ -8,6 +8,7 @@
   font-weight: 400;
   padding: 10px 60px;
   position: fixed;
+  top: 0;
   background-color: #fff;
   width: 100%;
   border-bottom: var(--border-main);
@@ -153,7 +154,7 @@
 .material-symbols-outlined{
   display: none;
 }
-.navLink:focus .active{
+.navbar__link .active .under--line{
   height: 3px;
   width: 100%;
   background-color: #1D58C8;
@@ -162,7 +163,14 @@
   left: 0;
 }
 
-.navLink:focus{
+/* .navLink:focus{
+  color: #206ED5;
+} */
+nav{
+  position: fixed;
+  z-index: 999;
+}
+.navbar .navbar__link .active {
   color: #206ED5;
 }
 
