@@ -1,4 +1,6 @@
+import { from } from "@apollo/client";
 import Head from "next/head";
+import { articles } from '../../graphql/articles'
 
 export const getStaticProps = async (params: any) => {};
 

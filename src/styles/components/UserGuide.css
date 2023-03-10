@@ -313,6 +313,13 @@
   color: #818fab;
 }
 
+@media screen and (max-width: 600px) {
+  .left--section{
+    display: none;
+  }
+  .right--section{
+    display: none;
+  }
+}
 
-/* ///////////// FOOTER //////////////// */
 
