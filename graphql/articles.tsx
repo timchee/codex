@@ -1,31 +1,65 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client";
 
 const articles = gql`
   query featuredArticles($lang: String!) {
-    gjirafaadsarticleCollection(
-      where: {
-        showAsHighlightArticle: { eq: true }
-        language: { some: { contains: $lang } }
-      }
-      order: { system: { publishDateTime: ASC } }
-      take: 3
-    ) {
+    articlesgjirafaCollection {
       items {
-        id
         title
-        system {
-          slug
-          publishDateTime
-        }
-        articleImage {
+        __typename
+        type
+        articlePublishedDate
+        placement
+        image {
           path
+          __typename
         }
-        articleCategory
-        articleDescription
+        articleSnippet
+        body {
+          type
+          text
+          attrs
+          content
+          contentHTML
+          __typename
+        }
+        id
+        system {
+          siteId
+          insertedBy
+          updatedBy
+          versionId
+          title
+          slug
+          metrics {
+            wordCount
+            characterCount
+            sentenceCount
+            imageCount
+            readingTime
+            __typename
+          }
+          __typename
+          modelId
+          modelAlias
+          externalId
+          status
+          insertDateTime
+          updateDateTime
+          publishDateTime
+          firstPublishDateTime
+          unpublishDateTime
+        }
+        articleSnippet
+        attrs
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        __typename
       }
     }
   }
-`
+`;
 
 const allArticles = gql`
   query allArticles($lang: String!) {
@@ -49,7 +83,7 @@ const allArticles = gql`
       }
     }
   }
-`
+`;
 
 const articleDetails = gql`
   query articleContent($articleSlug: String!) {
@@ -79,5 +113,5 @@ const articleDetails = gql`
       }
     }
   }
-`
-export { articles, articleDetails, allArticles }
+`;
+export { articles, articleDetails, allArticles };

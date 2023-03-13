@@ -6,14 +6,12 @@ export default function Navbar() {
   const router = useRouter();
 
   const isActive = (pathname: string) => router.pathname === pathname;
+
   return (
     <>
       <div className="navbar">
-        {/* <div className="navbar__logo"> */}
         <Link href="/" className="navbar__logo">
-          {/* <div ></div> */}
         </Link>
-        {/* </div> */}
         <div className="navbar__menu">
           <ul>
             <li className="navbar__link">
@@ -53,7 +51,7 @@ export default function Navbar() {
             <button>Log In</button>
             <button>
               Sign Up
-              <span className="material-symbols-rounded">open_in_new</span>
+              <span className="material-symbols-rounded" id="menu">open_in_new</span>
             </button>
           </div>
         </div>

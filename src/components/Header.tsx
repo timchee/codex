@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Headers() {
   return (
     <div className="head">
@@ -8,7 +10,9 @@ export function Headers() {
             Browse the latest developer documentation including tutorials,
             sample code, articles and API references.
           </p>
-          <button>Get Started</button>
+          {/* <Link to={"../pages/Userguide"}> */}
+            <button>Get Started</button>
+          {/* </Link> */}
         </div>
         <div className="header__logo">
           <div className="header__logo--logo"></div>

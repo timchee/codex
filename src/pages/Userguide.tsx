@@ -91,7 +91,7 @@ export default function UserGuide(props: Props) {
                 >
                   <ul>
                     <a href="#what-is-codex">How to get started</a>
-                    <a href="#organization">Create your first organization</a>
+                    <a href="#how-to-start">Create your first organization</a>
                     <li>
                       {" "}
                       <a href="#first-page">Create your first page</a>
