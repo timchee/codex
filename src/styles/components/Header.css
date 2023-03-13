@@ -1,13 +1,12 @@
 .header{
     background-color: var(--header-main-color);
-    /* width: 1140px; */
-    height: 336px;
-    /* padding: 0% 15%; */
     color: #ffffff;
     display: flex;
-    height: 450px;
+    height: 400px;
     max-width: var(--max-width) !important;
     margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 .header::before{
     content: "";
@@ -17,6 +16,7 @@
     background-color: var(--header-main-color);
     width: 100vw;
     padding: 0 20%;
+    margin-top: 62px;
 }
 .header__description{
     width: 100%;
@@ -30,6 +30,7 @@
 
 .header__description h1{
     font-size: 32px;
+    color: #ffffff;
 }
 .header__description p{
     font-size: 18px;
@@ -59,8 +60,8 @@
 }
 .header__logo--logo{
     background-image: url("../images/logo-favicon.png");
-    width: 220px;
-    height: 320px;
+    width: 250px;
+    height: 350px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -71,14 +72,56 @@
 
 .header__logo--logo::before {
     content: "";
-    background-image: url("../images/logo-blured.png");
+    background-image: url("../../images/header/logo.png");
     background-repeat: no-repeat;
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
     position: absolute;
     background-position: center center;
     background-size: contain;
-    top: 3%;
-    right: -2%;
+    top: 4%;
+    right: 0%;
 }
 
+@media screen and (max-width: 600px) {
+    .head{
+        width: 100vw;
+        overflow: hidden;
+        padding-left: 5%;
+        height: 400px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        /* padding: 2%; */
+    }
+    .header__description h1{
+        font-size:medium;
+    }
+    .header__description p{
+        font-size: small;
+    }
+    .header__logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__logo--logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        max-height: 150px;
+        background-size: contain;
+    }
+    .header__logo--logo::before{
+        max-width: 200px;
+        height: 200px;
+        /* position: static; */
+        right: -3%;
+        top: 18%;
+        display: none;
+    }
+}

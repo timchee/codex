@@ -17,7 +17,7 @@ export default function MostPopular() {
                             Complete documentation for Codex Admin API endpoints and possibilities. The documentation includes information about authorization, objects, limitations and also offers Swagger UI.
                         </p>
                         <div className='most-popular__card-content__link'>
-                            <div>Icon</div>
+                            <div className="most-popular__card-content__image"></div>
                             <p>CODEX PLUGINS</p>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ export default function MostPopular() {
                             All retrieval of data from Codex GraphQL APi is done through the root query object type. The query object contains the fields for retrieving entries for all models created in Codex.
                         </p>
                         <div className='most-popular__card-content__link'>
-                            <div>Icon</div>
+                            <div className="most-popular__card-content__image"></div>
                             <p>CODEX GRAPHQL</p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ export default function MostPopular() {
                             Complete documentation for Codex Admin API endpoints and possibilities. The documentation includes information about authorization, objects, limitations and also offers Swagger UI.
                         </p>
                         <div className='most-popular__card-content__link'>
-                            <div>Icon</div>
+                            <div className="most-popular__card-content__image"></div>
                             <p>CODEX API</p>
                         </div>
                     </div>
