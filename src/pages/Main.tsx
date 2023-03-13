@@ -1,12 +1,63 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { from } from "@apollo/client";
 import Head from "next/head";
 import { articles } from '../../graphql/articles'
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ClientParseError } from "@apollo/client";
+import client from '../../apollo-client'
+import { useTranslation } from 'react-i18next'
+import React from "react";
+import { registerEvent, demoBarEvent, bskEvent, biskoScript } from '../../utils/biskoEvents'
 
-export const getStaticProps = async (params: any) => {};
 
+// export const getStaticProps = async (params: any) => {};
 
+interface Models{
+  id: string;
+  title: string;
+}
 
 const MainPage = () => {
+  let [articleTeasers, changeArticleTeasers] = React.useState([])
+  const { t, i18n } = useTranslation()
+
+  const getHighlightArticles = async () => {
+    const lang = i18n.language == 'en' ? 'en' : 'alb'
+    try {
+      const { data } = await client.query({
+        query: articles,
+        variables: { lang },
+      })
+      if (data) {
+        const { items } = data.gjirafaadsarticleCollection
+        changeArticleTeasers(items)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  const [counter, setCounter] = React.useState(0)
+  const headingText = [
+    'Marketing Experts',
+    'Ecommerce Store Owners',
+    'Publishers',
+    'First Time Users',
+    'Corporate Marketing Teams',
+  ]
+
+  React.useEffect(() => {
+    getHighlightArticles()
+  }, [i18n.language])
+
+  React.useEffect(() => {
+    biskoScript()
+    const interval = setInterval(() => {
+      setCounter(prevCounter => (prevCounter === 3 ? 0 : prevCounter + 1))
+    }, 1800)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       <Head>
@@ -26,6 +77,9 @@ const MainPage = () => {
             <p> What is Codex {">"}</p>
             <p> Starting </p>
           </div>
+          <h2 key={Math.random()}>
+              {t(headingText[counter])}
+            </h2>
           <div className="main--section__content__description" id="what-is-codex">
             <h1>How to get started</h1>
             <p>
@@ -47,7 +101,7 @@ const MainPage = () => {
             <div className="main--section__content__code__code-one" id="organization">
               <div className="one">1</div>
               <div className="code--one__description" >
-                <h3>Integrate your site</h3>
+                <h3>{}</h3>
                 <p>
                   Dessert cheesecake chocolate bar sugar plum tart soufflé
                   toffee caramels. Chocolate bar pie gummi bears powder
@@ -90,11 +144,11 @@ const MainPage = () => {
           <div className="writing--code__content">
             <h2>Writing Code</h2>
             <div className="writing--code__paragraph">
-              <p>You can write code in this way</p>
+              <p>You can write code in this way&nbsp;</p>
               <div className="chocolate--bar">
-                <p> &nbsp;chocolate bar sugar &nbsp;</p>
+                <p>chocolate bar sugar</p>
               </div>
-              <p>just be sure to write properly</p>
+              <p>&nbsp;just be sure to write properly</p>
             </div>
           </div>
           <div className="writing--code__image"></div>
@@ -110,3 +164,11 @@ const MainPage = () => {
 };
 
 export default MainPage;
+// function changeArticleTeasers(items: any) {
+//   throw new Error("Function not implemented.");
+// }
+
+// function biskoScript() {
+//   throw new Error("Function not implemented.");
+// }
+
