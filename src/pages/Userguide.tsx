@@ -103,8 +103,7 @@ export default function UserGuide(props: Props) {
           </div>
         </section>
 
-        <MainPage />
-
+                  <MainPage />
         <section className="right--section">
           <div className="right--section__content">
             <h1>Currently viewing</h1>
