@@ -1,35 +1,39 @@
 import { gql } from "@apollo/client";
 
 const articles = gql`
-  query featuredArticles($lang: String!) {
-    articlesgjirafaCollection {
+  query articles {
+    codexGuideArticlesCollection {
       items {
-        title
-        __typename
-        type
-        articlePublishedDate
-        placement
-        image {
-          path
-          __typename
-        }
-        articleSnippet
-        body {
-          type
-          text
-          attrs
-          content
-          contentHTML
-          __typename
-        }
         id
+        title
+        description
+        articleBody {
+          type
+          contentHTML
+          attrs
+          __typename
+        }
+      }
+    }
+  }
+`;
+
+const allArticles = gql`
+  query allArticles($lang: String!) {
+    entryCollection(
+      where: { language: { some: { contains: $lang } } }
+      order: { system: { publishDateTime: ASC } }
+    ) {
+      items {
+        id
+        __typename
         system {
           siteId
-          insertedBy
-          updatedBy
-          versionId
+          externalId
+          firstPublishDateTime
           title
           slug
+          status
           metrics {
             wordCount
             characterCount
@@ -38,49 +42,15 @@ const articles = gql`
             readingTime
             __typename
           }
-          __typename
-          modelId
-          modelAlias
-          externalId
-          status
-          insertDateTime
-          updateDateTime
-          publishDateTime
-          firstPublishDateTime
-          unpublishDateTime
         }
-        articleSnippet
-        attrs
       }
       pageInfo {
         hasNextPage
         hasPreviousPage
         __typename
       }
-    }
-  }
-`;
-
-const allArticles = gql`
-  query allArticles($lang: String!) {
-    gjirafaadsarticleCollection(
-      where: { language: { some: { contains: $lang } } }
-      order: { system: { publishDateTime: ASC } }
-    ) {
-      items {
-        id
-        title
-        system {
-          slug
-          publishDateTime
-        }
-        articleImage {
-          path
-        }
-        articleCategory
-        articleDescription
-        language
-      }
+      totalCount
+      __typename
     }
   }
 `;
@@ -114,4 +84,4 @@ const articleDetails = gql`
     }
   }
 `;
-export { articles, articleDetails, allArticles };
+export {articles,articleDetails, allArticles };

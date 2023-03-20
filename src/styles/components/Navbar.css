@@ -173,7 +173,27 @@ nav{
 .navbar .navbar__link .active {
   color: #206ED5;
 }
-
+@media screen and (max-width: 1000px) {
+  .navbar{
+    margin: 0;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .navbar__logo{
+    margin: 0;
+  }
+  .navbar__link{
+    /* max-height: 62px; */
+    /* margin-bottom: 20px; */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+  }
+  .search{
+    width: 180px !important;
+  }
+}
 @media screen and (max-width: 600px) {
   .navbar{
     width: 100vw;
@@ -204,11 +224,23 @@ nav{
     font-size: 30px;
     display: flex;
   }
-  /* .login button{
+  .navbar__menu .myClass{
     display: none;
   }
-  .login button:nth-child(2){
-    display: none !important;
+  .dropdown__menu{
+    display: none;
+  }
+  /* .dropdown__menu ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    gap: 15px;
+    background-color: #fff;
+    top: 62px;
+    right: 0;
+    padding: 15px 25px;
+    
   } */
 
 }
