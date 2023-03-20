@@ -7,7 +7,7 @@ export default function MostPopular() {
                 Most popular
             </h5>
             <div className="most-popular__cards">
-                <Link href="/" className="most-popular__card">
+                <Link href="https://docs.codex.gjirafa.tech/docs/plugins/create-first-plugin" className="most-popular__card">
                     <div className="most-popular__card-image"></div>
                     <div className="most-popular__card-content">
                         <h6>
@@ -22,7 +22,7 @@ export default function MostPopular() {
                         </div>
                     </div>
                 </Link>
-                <Link href="/" className='most-popular__card'>
+                <Link href="https://docs.codex.gjirafa.tech/docs/graphql/schema" className='most-popular__card'>
                     <div className="most-popular__card-image"></div>
                     <div className="most-popular__card-content">
                         <h6>
@@ -37,7 +37,7 @@ export default function MostPopular() {
                         </div>
                     </div>
                 </Link>
-                <Link href="/" className='most-popular__card'>
+                <Link href="https://docs.codex.gjirafa.tech/docs/api/intro" className='most-popular__card'>
                     <div className="most-popular__card-image"></div>
                     <div className="most-popular__card-content">
                         <h6>
