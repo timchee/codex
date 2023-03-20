@@ -1,18 +1,29 @@
-// import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
+import React from 'react';
 
-// interface Data {
-//   message: string;
-// }
+interface Data {
+  message: string;
+}
 
-// async function Handler(
-//     req: NextApiRequest,
-//     res: NextApiResponse<Data>
-//   ) {
-//     const response = await fetch('https://api.codex.gjirafa.tech');
-//     const data = await response.json();
-//     console.log(data);
+async function Handler(
+    req: NextApiRequest,
+    res: NextApiResponse<Data>
+  ) {
+    const response = await fetch('https://api.codex.gjirafa.tech');
+    const data = await response.json();
+    console.log(data);
+    console.log(response);
     
-//     res.status(200).json({ message: data.message });
-//   }
+    
+    res.status(200).json({ message: data.message });
+  
 
-//   export default Handler;
+    
+    return (
+        <div>
+        <h1>{data.id}</h1>
+    </div>
+  )
+  
+}
+export default Handler;

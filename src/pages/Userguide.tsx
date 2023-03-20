@@ -8,7 +8,7 @@ import {
   gql,
 } from "@apollo/client";
 import React, { useState } from "react";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
 import MainPage from "./Main";
 
 interface Props {
@@ -103,7 +103,7 @@ export default function UserGuide(props: Props) {
           </div>
         </section>
 
-                  <MainPage />
+                  <MainPage name={undefined} message={""} />
         <section className="right--section">
           <div className="right--section__content">
             <h1>Currently viewing</h1>
