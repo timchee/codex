@@ -99,6 +99,7 @@
 .most-popular__card:nth-child(3) .most-popular__card-content__image {
     background-image: url('../../images/svg/codex-api.svg');
 }
+
 @media screen and (max-width: 600px) {
     .most-popular{
         display: flex;
