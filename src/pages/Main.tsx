@@ -21,11 +21,13 @@ import Link from "next/link";
 
 ////////////////////////////////////////////////////
 
-
+let siteId = "sicBPetCCe"
+let model = "codexguidearticles"
+let entry = "ce5ws51KeG"
 
 
 interface Data {
-  [fields: Array<0>]
+  // [fields: Array<0>]
   [x: string]: ReactNode;
   name: ReactNode;
   message: string;
@@ -37,16 +39,18 @@ export default function MainPage(){
 
   const [data, setData] = useState<Data>({
     message: "help",
-    name: undefined
+    name: undefined,
   });
 
   async function fetchData() {
     const response = await fetch(
-      "https://api.codex.gjirafa.tech/api/gjirafatech/layout/",
+      "https://api.codex.gjirafa.dev/v2/codex-dev/entries?SiteId=sicBPetCCe&Model=codexguidearticles",
       {
         headers: {
+          Accept: 'accept: */*',
+
           Authorization:
-            "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkU2MzY5NjQ0RTk5RTMzRTZFODRBRkNGOThDMjZEMTQwMzlGREQwMjBSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjVqYVdST21lTS1ib1N2ejVqQ2JSUURuOTBDQSJ9.eyJuYmYiOjE2NzkwNjUxMDAsImV4cCI6MTY3OTIzNzkwMCwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50LmdqaXJhZmEudGVjaCIsImF1ZCI6WyJDb2RleF9WdWVfQWRtaW5fQXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiY2xpZW50X2lkIjoiY29kZXhfdnVlX2FkbWluIiwic3ViIjoiMmQyMzQwZTQtMDQ3MS00MjE2LWE5MGYtYTE4YzgwNDAyMjFiIiwiYXV0aF90aW1lIjoxNjc3NTkzMjYwLCJpZHAiOiJHb29nbGUiLCJuYW1lIjoiU2hwZWp0aW0gVWthaiIsImdpdmVuX25hbWUiOiJTaHBlanRpbSIsImZhbWlseV9uYW1lIjoiVWthaiIsInBpY3R1cmUiOiJodHRwczovL3Rvam5odTRtdnAuZ2ppcmFmYS5uZXQvcHJvZmlsZXBpY3R1cmVzLzg3VnlUMGdOa1RPejhzUzdRaEczVVhmdTVRSC9qOGlqbUtBSFVOM0o5TW89Lzk5NzYwMDYwLjI1NzM2OTQuanBnIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2hwZWp0aW0udWthakBsaWZlLmdqaXJhZmEuY29tIiwiZW1haWwiOiJzaHBlanRpbS51a2FqQGxpZmUuZ2ppcmFmYS5jb20iLCJqdGkiOiJERUUyREUwNzZFNkQ0OEZDMEUzQjI1QzQ4NEUyNTc1MyIsInNpZCI6IjY1MkJDOUZBNDVGMDBDMzFFQjVFQTFFNTRCQ0VCMTI4IiwiaWF0IjoxNjc5MDY1MTAwLCJzY29wZSI6WyJDb2RleF9WdWVfQWRtaW5fQXBpIiwib3BlbmlkIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbImV4dGVybmFsIl19.u-1gz9Oh2Edi-Gs2csyxXoOEGe_-UWBCo2VokwFQNjU6li3220iuzTZB0tRGkvrVgqovdG7ThBRNmD3sO2N8ifN3jbDPcJoFbnVlOA74mH7HoItv-3UUJQVOse2CVFl5X1TnkEFt6hjTcdFALN2yCL19MGJNiNAZg76uBtGhMPlH8RsJn_Tyi4BKH8nad2XlXI7NTmF6_h6tCyLZjgkIi49gVjWZl45tIBO36PYZy4IpEsDusI-GBnoady7vqm8IL2oe7KD7SRmwHnQzqVADoe1yzoVwVYRjRDJsS3HwbxuPuzt3tP4ZcLn_AtjI0IX-2eAjVDkbSlV_UfUqKH1S5g",
+            "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkU2MzY5NjQ0RTk5RTMzRTZFODRBRkNGOThDMjZEMTQwMzlGREQwMjBSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6IjVqYVdST21lTS1ib1N2ejVqQ2JSUURuOTBDQSJ9.eyJuYmYiOjE2NzkyNjU1MjcsImV4cCI6MTY3OTQzODMyNywiaXNzIjoiaHR0cHM6Ly9hY2NvdW50LmdqaXJhZmEudGVjaCIsImF1ZCI6WyJDb2RleF9WdWVfQWRtaW5fQXBpIiwib2ZmbGluZV9hY2Nlc3MiXSwiY2xpZW50X2lkIjoiY29kZXhfdnVlX2FkbWluIiwic3ViIjoiMmQyMzQwZTQtMDQ3MS00MjE2LWE5MGYtYTE4YzgwNDAyMjFiIiwiYXV0aF90aW1lIjoxNjc3NTkzMjYwLCJpZHAiOiJHb29nbGUiLCJuYW1lIjoiU2hwZWp0aW0gVWthaiIsImdpdmVuX25hbWUiOiJTaHBlanRpbSIsImZhbWlseV9uYW1lIjoiVWthaiIsInBpY3R1cmUiOiJodHRwczovL3Rvam5odTRtdnAuZ2ppcmFmYS5uZXQvcHJvZmlsZXBpY3R1cmVzLzg3VnlUMGdOa1RPejhzUzdRaEczVVhmdTVRSC9qOGlqbUtBSFVOM0o5TW89Lzk5NzYwMDYwLjI1NzM2OTQuanBnIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2hwZWp0aW0udWthakBsaWZlLmdqaXJhZmEuY29tIiwiZW1haWwiOiJzaHBlanRpbS51a2FqQGxpZmUuZ2ppcmFmYS5jb20iLCJqdGkiOiI2RTg5RTRGRDYzN0IyODZBRDMzQ0MxRDU5OEIyQUU4RSIsImlhdCI6MTY3OTI2NTUyNywic2NvcGUiOlsiQ29kZXhfVnVlX0FkbWluX0FwaSIsIm9wZW5pZCIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJleHRlcm5hbCJdfQ.tnIymzM07bomP48bfSQtMiCqVHlt4PT2Roci_ZqSAJWUigISoNTnpLo5gahxtx_E8J8EgHyCLX1rVPoO3FKJ1wze1yc_gSD-1i_FX8jGFVrgys43qxTTPncfD7O-DyrZFveYA4Omqq4zVSH27R37IHptBBp97cSOk62ephBXDJevQumZ71we-2lbYkH7HYR9D7mlcPzgzHjinm4QotUbXEFeeKryOuP_Ef08MdIyu2J6w3fdf8VAfkZ9sQ2Gx0wm7TESjmk91VCmNCm9L94qbI7TVg0Zyua4q8aCSCz4wWGMf6suhmnKutowjl-zq0hrVryeU3Q0yZ8QitIofmIkvQ",
         },
       }
     );
@@ -54,11 +58,8 @@ export default function MainPage(){
     const data = await response.json();
     setData(data);
     console.log(data);
-    console.log(response);
-    console.log(response.type);
-    
+    console.log(data.id);
 
-    
   }
 
   return (
