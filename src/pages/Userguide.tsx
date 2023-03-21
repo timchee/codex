@@ -17,8 +17,7 @@ interface Props {
 }
 
 export default function UserGuide(props: Props) {
-  const { hidden, element } = props;
-  const [isClassAdded, setIsClassAdded] = useState<boolean>(false);
+  const [isClassAdded, setIsClassAdded] = useState<boolean>();
 
   const handleClick = () => {
     setIsClassAdded(!isClassAdded);
@@ -103,7 +102,7 @@ export default function UserGuide(props: Props) {
           </div>
         </section>
 
-                  <MainPage name={undefined} message={""} />
+                  <MainPage />
         <section className="right--section">
           <div className="right--section__content">
             <h1>Currently viewing</h1>

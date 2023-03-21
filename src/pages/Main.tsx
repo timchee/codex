@@ -21,10 +21,7 @@ import Link from "next/link";
 
 ////////////////////////////////////////////////////
 
-let siteId = "sicBPetCCe"
-let model = "codexguidearticles"
-let entry = "ce5ws51KeG"
-
+// client
 
 interface Data {
   // [fields: Array<0>]
@@ -44,7 +41,7 @@ export default function MainPage(){
 
   async function fetchData() {
     const response = await fetch(
-      "https://api.codex.gjirafa.dev/v2/codex-dev/entries?SiteId=sicBPetCCe&Model=codexguidearticles",
+      "https://graphql.codex.gjirafa.dev/v2/codex-dev/",
       {
         headers: {
           Accept: 'accept: */*',
@@ -74,18 +71,15 @@ export default function MainPage(){
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         ></link>
       </Head>
-      {/* {fetchData} */}
       <div className="mainPage" onLoadedData={fetchData}>
         <h1 className="name">{data.name}</h1>
-        <Link href={`https://codex.gjirafa.dev/codex-dev/silVdOprHm/entries/mine/codexguidearticles/${data.id}`}>
+        
           {data.id}
-        </Link>
-        <h3><Link href={`https://codex.gjirafa.dev/codex-dev/silVdOprHm/entries/mine/codexguidearticles/${data.id}`}>
-
-        id:{data.id}
-        </Link> 
+        <h3>
+        id:{data.id} 
         </h3>
-        <h1>alias:{data.currentPage}</h1>
+    
+        <h1>alias:{data.title}</h1>
         <h1>normaliesed name:{data.hasNext}</h1>
         <h1> message:{data.hasPrevious}</h1>
         <h3>{data.data}</h3><h3> created by{': '}{data.createdBy}</h3>
@@ -96,9 +90,6 @@ export default function MainPage(){
 
 
         <button onClick={fetchData}>fetch</button>
-        {/* <h1>type: {data.type}</h1> */}
-        {/* console.log(data.name); */}
-        
         <div className="main--section__content">
           <div className="mainPage--routings">
 
