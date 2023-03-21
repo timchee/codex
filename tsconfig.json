@@ -16,7 +16,7 @@
     "incremental": true,
     "baseUrl": "https://api.codex.gjirafa.dev/v2/codex-dev/entries?SiteId=sicBPetCCe&Model=codexguidearticles",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

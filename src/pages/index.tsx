@@ -3,13 +3,13 @@
 /* eslint-disable react/no-children-prop */
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import QuickLinks from '@/components/QuickLinks'
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
-import { Headers } from '@/components/Header'
-import MostPopular from '@/components/MostPopular'
-import TechnicalCategories from '@/components/TechnicalCategories'
+import styles from '../styles/Home.module.css'
+import QuickLinks from '../components/QuickLinks'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import { Header } from '../components/Header'
+import MostPopular from '../components/MostPopular'
+import TechnicalCategories from '../components/TechnicalCategories'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,16 +25,14 @@ export default function Home() {
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.1/css/line.css" />        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" ></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      
       </Head>
         <Navbar />
-        <main className={styles.main}>
-          
-          <Headers />
+        <main>
+          <Header />
+          <TechnicalCategories />
+          <MostPopular />
+          <QuickLinks />
         </main>
-        <TechnicalCategories />
-        <MostPopular />
-        <QuickLinks />
         <Footer />
     </>
   )

@@ -4,18 +4,14 @@
     margin-bottom: 70px;
     margin-top: 50px;
 }
-
 .technical-categories__title {
     margin-bottom: 30px;
 }
-
 .technical-categories__items {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
-
-
 .technical-categories__item {
     display: flex;
     justify-content: space-between;
@@ -29,17 +25,14 @@
     padding: 12px 20px;
     transition: transform .2s ease-out;
 }
-
 .technical-categories__item h6 {
     font-size: 16px;
     font-weight: var(--font-medium);
 }
-
 .technical-categories__item:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-card);
 }
-
 .technical-categories__item-image {
     background-position: center center;
     background-repeat: no-repeat;
@@ -49,23 +42,18 @@
     max-height: 100%;
     max-width: 100%;
 }
-
 .technical-categories__item:nth-child(1) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-api.svg');
 }
-
 .technical-categories__item:nth-child(2) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-editor.svg');
 }
-
 .technical-categories__item:nth-child(3) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-graphql.svg');
 }
-
 .technical-categories__item:nth-child(4) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-plugins.svg');
 }
-
 .technical-categories__item:nth-child(5) .technical-categories__item-image {
     background-image: url('../../images/svg/codex-plugins.svg');
 }
