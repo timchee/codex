@@ -7,7 +7,7 @@ footer {
     max-width: var(--max-width);
     margin: auto;
     font-size: 12px;
-    height: 55px;
+    height: var(--footer-height);
     align-items: center;
     color: var(--body-docs-color)
 }
