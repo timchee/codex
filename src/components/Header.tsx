@@ -1,8 +1,8 @@
-// import  Link  from "react-router-dom";
 import Link from "next/link";
-export function Headers() {
+
+export function Header() {
   return (
-    <div className="head">
+    <header className="head">
       <div className="header">
         <div className="header__description">
           <h1>Welcome to Codex!</h1>
@@ -19,6 +19,6 @@ export function Headers() {
           <div className="header__logo--shadow"></div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
