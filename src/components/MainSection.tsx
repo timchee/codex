@@ -29,7 +29,6 @@ export default function Articles() {
         {data.codexguidearticlesCollection.items.map((article: Article) => (
           <div key={article.id}>
             <h2>{article.title}</h2>
-            <p>ID: {article.id}</p>
             <p>Description: {article.description}</p>
           </div>
         ))}
