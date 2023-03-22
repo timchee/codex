@@ -1,10 +1,11 @@
-import Navbar from "../../components/Navbar";
+import Navbar from "../../../components/Navbar";
 import Head from "next/head";
 import React, { useState } from "react";
-import Footer from "../../components/Footer";
-import Articles from "../../components/MainSection";
-import LeftSideMenu from "../../components/LeftSideMenu";
-import RightSideMenu from "../../components/RightSideMenu";
+import Footer from "../../../components/Footer";
+import Articles from "../../../components/MainSection";
+import LeftSideMenu from "../../../components/LeftSideMenu";
+import RightSideMenu from "../../../components/RightSideMenu";
+import PostPage from "./contente";
 
 interface Props {
   hidden: string;
@@ -48,11 +49,12 @@ export default function UserGuide(props: Props) {
 
       <Navbar />
       
-      <LeftSideMenu hidden={""} />
+      <LeftSideMenu />
 
       <main className="main-section">
         <div>
-            <Articles />
+            {/* <Articles /> */}
+            <PostPage />
             <RightSideMenu />
         </div>
 

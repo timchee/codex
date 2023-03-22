@@ -22,7 +22,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide`} className={isActive('/userguide') ? 'active' : ''}>
+              <Link href="/userguide/id" className={isActive('/userguide/id') ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>

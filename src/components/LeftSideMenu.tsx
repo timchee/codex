@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { ARTICLES_QUERY } from "../../graphql/articles";
 import { Article } from "../../interfaces/IMain";
+import PostPage from "../pages/userguide/[id]";
+import classNames from "classnames";
+import router from "next/router";
 
 interface Props {
   hidden: string;
@@ -30,20 +33,29 @@ export default function LeftSideMenu(props: Props) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
+
+  const isActive = (pathname: string) => router.pathname === pathname;
+  const myClass = 'my-class';
+  const combinedClassName = classNames("navbar__menu", myClass);
+
   return (
     <aside className="left--section">
       <div className="left--section__components">
         <h6>User Guide</h6>
-        {data.codexguidearticlesCollection.items.map((article: Article) => (
-          <div className="span--div" key={article.id}>
-            <div className={`span ${isClassAdded ? "hidden" : ""}`}>
-              <div className="small--span" id="small--span"></div>
-            </div>
-            <div className="lists">
-                <p>{article.title}</p>
-            </div>
+        <div className="span--div">
+          <div className="span"></div>
+          <div className="small--span"></div>
+
+          <div className="lists">
+            {data.codexguidearticlesCollection.items.map((article: Article) => (
+              <div key={article.id} className="">
+                <Link href={`../userguide/${article.id}`} className={isActive(`../userguide/${article.id}`) ? 'active' : ''}>
+                  <p>{article.title}</p>
+                </Link>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </aside>
   );
