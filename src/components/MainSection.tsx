@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { ARTICLES_QUERY } from "../../graphql/articles";
 import { Article } from "../../interfaces/IMain";
-import Breadcrumbs from "../components/Breadcrumbs ";
+import Breadcrumbs from "./Breadcrumbs ";
 
 export default function Articles() {
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
@@ -29,7 +29,6 @@ export default function Articles() {
         {data.codexguidearticlesCollection.items.map((article: Article) => (
           <div key={article.id}>
             <h2>{article.title}</h2>
-            <p>ID: {article.id}</p>
             <p>Description: {article.description}</p>
           </div>
         ))}
