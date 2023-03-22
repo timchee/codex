@@ -1,31 +1,45 @@
-// import "../styles/globals.css";
-// import GjIcon from "@gjirafatech/gjirafa-icons/GjIcon";
-
 import Link from "next/link";
+import classNames from "classnames";
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
+  const router = useRouter();
+
+  const isActive = (pathname: string) => router.pathname === pathname;
+  const myClass = 'my-class';
+  const combinedClassName = classNames("navbar__menu", myClass);
+
   return (
     <>
-      <div className="navbar">
-        <div className="navbar__logo">
-          <Link href="/"></Link>
-        </div>
-        <div className="navbar__menu">
+      <nav className="navbar">
+        <Link href="/" className="navbar__logo">
+        </Link>
+        <div className={combinedClassName}>
           <ul>
             <li className="navbar__link">
-              <Link href="/" className="navLink">Welcome<div className="active"></div></Link>
+              <Link href="/" className={isActive('') ? 'active' : ''}>
+                Welcome<div className="under--line"></div>
+              </Link>
             </li>
             <li className="navbar__link">
-              <Link href="/Userguide" className="navLink">User Guide<div className="active"></div></Link>
+              <Link href="/userguide" className={isActive('/userguide') ? 'active' : ''}>
+                User Guide<div className="under--line"></div>
+              </Link>
             </li>
             <li className="navbar__link">
-              <Link href="" className="navLink">Technical<div className="active"></div></Link>
+              <Link href="/" className={isActive('/') ? 'active' : ''}>
+                Technical<div className="under--line"></div>
+              </Link>
             </li>
             <li className="navbar__link">
-              <Link href="" className="navLink">Playground<div className="active"></div></Link>
+              <Link href="/" className={isActive('') ? 'active' : ''}>
+                Playground<div className="under--line"></div>
+              </Link>
             </li>
             <li className="navbar__link">
-              <Link href="" className="navLink">Release Notes<div className="active"></div></Link>
+              <Link href="/" className={isActive('') ? 'active' : ''}>
+                Release Notes<div className="under--line"></div>
+              </Link>
             </li>
           </ul>
         </div>
@@ -39,47 +53,23 @@ export default function Navbar() {
             <button>Log In</button>
             <button>
               Sign Up
-              <span className="material-symbols-rounded">open_in_new</span>
+              <span className="material-symbols-rounded" id="menu">open_in_new</span>
             </button>
           </div>
         </div>
         <div className="menu">
-          <span className="material-symbols-outlined">menu</span>
+          <span className="material-symbols-outlined" id="burger-menu">menu</span>
         </div>
-      </div>
+        {/* <div className="dropdown__menu" id="dropdown__menu">
+          <ul>
+            <li>Welcome</li>
+            <li>User Guide</li>
+            <li>Technical</li>
+            <li>Playground</li>
+            <li>Release Notes</li>
+          </ul>
+        </div> */}
+      </nav>
     </>
   );
 }
-
-
-// function transition(genreName: string): HTMLCollectionOf<Element> {
-//   let i: number;
-//   let tabcontent: HTMLCollectionOf<Element> =
-//     document.getElementsByClassName("tabcontent");
-//   for (i = 0; i < tabcontent.length; i++) {
-//     (tabcontent[i] as HTMLElement).style.display = "none";
-//   }
-//   let tablinks: HTMLCollectionOf<Element> =
-//     document.getElementsByClassName("tablinks");
-//   for (i = 0; i < tablinks.length; i++) {
-//     (tablinks[i] as HTMLElement).className = (
-//       tablinks[i] as HTMLElement
-//     ).className.replace(" active", "");
-//   }
-//   (document.getElementById(genreName) as HTMLElement).style.display = "block";
-//   return tablinks;
-// }
-
-// function openTab(evt: MouseEvent, genreName: string): void {
-//   transition(genreName);
-//   (evt.currentTarget as HTMLElement).className += " active";
-// }
-
-// function tabLink(genreName: string): void {
-//   let tablinks: HTMLCollectionOf<Element> = transition(genreName);
-//   for (let i = 0; i < tablinks.length; i++) {
-//     if ((tablinks[i] as HTMLElement).innerHTML === genreName) {
-//       (tablinks[i] as HTMLElement).className += " active";
-//     }
-//   }
-// }

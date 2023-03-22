@@ -1,6 +1,8 @@
-export function Headers() {
+import Link from "next/link";
+
+export function Header() {
   return (
-    <div className="head">
+    <header className="head">
       <div className="header">
         <div className="header__description">
           <h1>Welcome to Codex!</h1>
@@ -8,13 +10,15 @@ export function Headers() {
             Browse the latest developer documentation including tutorials,
             sample code, articles and API references.
           </p>
-          <button>Get Started</button>
+          <Link href="https://docs.codex.gjirafa.tech/docs/api/intro">
+            <button>Get Started</button>
+          </Link>
         </div>
         <div className="header__logo">
           <div className="header__logo--logo"></div>
           <div className="header__logo--shadow"></div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
