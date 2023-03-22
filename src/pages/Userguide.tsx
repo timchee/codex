@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Head from "next/head";
 import React, { useState } from "react";
 import Footer from "../components/Footer";
-import Articles from "./Main";
+import Articles from "../components/MainSection";
 import LeftSideMenu from "../components/LeftSideMenu";
 import RightSideMenu from "../components/RightSideMenu";
 

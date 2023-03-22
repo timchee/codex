@@ -5,5 +5,7 @@
 }
 
 .breadcrumbs span:nth-child(even) {
-    color: red;
+    color: var(--breadcrumbs-arrow);
+    padding-left: 14px;
+    padding-right: 14px;
 }
