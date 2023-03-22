@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  height: 62px;
+  height: var(--navbar-height);
   font-size: 20px;
   color: #173163;
   align-items: center;

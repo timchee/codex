@@ -5,6 +5,7 @@
 @import url("./components/Header.css");
 @import url("./components/Navbar.css");
 @import url("./components/UserGuide.css");
+@import url("./components/Breadcrumbs.css");
 
 :root {
   --max-width: 1140px;
@@ -23,6 +24,8 @@
 
   --color-heading: #173163;
   --color-paragraph: #455a82;
+
+  --breadcrumbs-arrow: #A3B0C2;
 
   --ifm-color-primary-lightest: #608fe8;
   --ifm-color-primary-lighter: #3f78e3;
@@ -44,7 +47,10 @@
 
   --shadow-card: 0px 8px 18px rgba(76, 58, 99, 0.06);
 
-  --left-section-width: 320px;
+  --left-side-width: 320px;
+  --right-side-width: 350px;
+  --navbar-height: 62px;
+  --footer-height: 55px;
 }
 
 * {

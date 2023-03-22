@@ -2,7 +2,9 @@ import Navbar from "../components/Navbar";
 import Head from "next/head";
 import React, { useState } from "react";
 import Footer from "../components/Footer";
-import Articles from "./Main";
+import Articles from "../components/MainSection";
+import LeftSideMenu from "../components/LeftSideMenu";
+import RightSideMenu from "../components/RightSideMenu";
 
 interface Props {
   hidden: string;
@@ -45,81 +47,17 @@ export default function UserGuide(props: Props) {
       </Head>
 
       <Navbar />
-      <aside className="left--section">
-        <div className="left--section__components">
-          <h6>Welcome</h6>
-          <div className="span--div">
-            <div className={`span ${isClassAdded ? "hidden" : ""}`}>
-              <div className="small--span" id="small--span"></div>
-            </div>
-            <div className="lists">
-              <div onClick={handleClick} id="list-one">
-                {/* {React.cloneElement(element, { className: isClassAdded ? hidden : '' })} */}
-                <h2>
-                  What is Codex
-                  <span
-                    id="arrow"
-                    className={`material-symbols-outlined ${
-                      isClassAdded ? "arrow" : ""
-                    }`}
-                  >
-                    keyboard_arrow_down
-                  </span>
-                </h2>
-              </div>
-              <div
-                id="list-two"
-                // className="left--section__components__selection"
-                className={`left--section__components__selection ${
-                  isClassAdded ? "hidden" : ""
-                }`}
-              >
-                <ul>
-                  <a href="#what-is-codex">How to get started</a>
-                  <a href="#how-to-start">Create your first organization</a>
-                  <li>
-                    {" "}
-                    <a href="#first-page">Create your first page</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-
+      
+      <LeftSideMenu hidden={""} />
 
       <main className="main-section">
         <div>
-          <div>
             <Articles />
-
-            <section className="right--section">
-              <div className="right--section__content">
-                <h6>Currently Viewing</h6>
-                <ul>
-                  <li>
-                    <a>What is Codex</a>
-                  </li>
-                  <li>
-                    <a>How to get started</a>
-                  </li>
-                  <li>
-                    <a>Create your first organization</a>
-                  </li>
-                  <li>
-                    <a>Create your first page</a>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </div>
-
+            <RightSideMenu />
         </div>
 
         <Footer />
       </main>
-
     </>
   );
 }
