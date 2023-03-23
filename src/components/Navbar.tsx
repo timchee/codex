@@ -4,19 +4,34 @@ import { useRouter } from 'next/router';
 import { useQuery } from "@apollo/client";
 import { ARTICLES_QUERY } from "../../graphql/articles";
 import { Article, ArticleBody } from "../../interfaces/IMain";
+import parse from "html-react-parser";
+import { Suspense, useEffect } from "react";
 
 export default function Navbar() {
   const router = useRouter();
   const { query } = useRouter();
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
 
+
   const isActive = (pathname: string) => router.pathname === pathname;
   const myClass = 'my-class';
   const combinedClassName = classNames("navbar__menu", myClass);
 
-  const currentArticle = data.codexguidearticlesCollection.items.find(
-    (article: Article) => article.id === router.query.id
-  );
+  // const currentArticle = data.codexguidearticlesCollection.items.find(
+  //   (article: Article) => article.id === router.query.id
+  // );
+  useEffect(() => {
+    if (!loading) {
+      console.log("Data loaded successfully", data);
+    }
+  }, [loading]);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+
+  const idja = data.codexguidearticlesCollection.items.find((article: Article) => article.id === router.query.id)
+  const route = router.query.id
+  
 
   return (
     <>
@@ -31,7 +46,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide/${data.codexguidearticlesCollection.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
+              <Link href={`/userguide/${route}`} className={isActive(`/userguide`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>
