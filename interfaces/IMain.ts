@@ -15,6 +15,7 @@ export interface ArticleBody {
 }
 
 export interface Article {
+  map: any;
   id: string;
   title: string;
   description: string;

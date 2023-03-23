@@ -31,8 +31,9 @@ export default function LeftSideMenu(props: Props) {
     }
   }, [loading]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p></p>;
   if (error) return <p>Error: {error.message}</p>;
+  
 
 
   const isActive = (pathname: string) => router.pathname === pathname;
@@ -44,14 +45,14 @@ export default function LeftSideMenu(props: Props) {
       <div className="left--section__components">
         <h6>User Guide</h6>
         <div className="span--div">
-          <div className="span"></div>
-          <div className="small--span"></div>
+          {/* <div className="span"></div> */}
 
           <div className="lists">
             {data.codexguidearticlesCollection.items.map((article: Article) => (
-              <div key={article.id} className="">
-                <Link href={`../userguide/${article.id}`} className={isActive(`../userguide/${article.id}`) ? 'active' : ''}>
-                  <p>{article.title}</p>
+              <div key={article.id}>
+                <Link href={`../userguide/${article.id}`} >
+                <div className="small--span" ></div>
+                  <p className={isActive(`../userguide/${article.id}`) ? 'active' : ''}>{article.title}</p>
                 </Link>
               </div>
             ))}
