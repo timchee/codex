@@ -79,7 +79,7 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 35px;
 }
 
 h3 {
@@ -109,8 +109,26 @@ h6 {
 
 p {
   font-size: 16px;
+  /* margin-left: 15px; */
 }
+strong:only-of-type{
+  font-size: 25px;
+}
+/* strong:only-child{
+  font-size: 25px;
+} */
 
 li {
   list-style: none;
+}
+li{
+  font-size: 16px;
+
+}
+li p strong{
+  font-size: 16px !important;
+}
+
+.main-content__container div div div div{
+  font-size: 16px !important;
 }
