@@ -1,5 +1,5 @@
 footer {
-    border: var(--border-main);
+    border-top: var(--border-main);
     /* position: absolute;
     bottom: 0;
     right: 0;
