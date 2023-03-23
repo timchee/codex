@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { useLocation } from 'react-router-dom';
 import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { ARTICLES_QUERY } from "../../graphql/articles";
