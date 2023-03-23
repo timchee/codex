@@ -7,6 +7,7 @@ import { ARTICLES_QUERY } from "../../../../graphql/articles";
 import { Article, ArticleBody } from "../../../../interfaces/IMain";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
 
+
 const PostPage = () => {
 
   const {query} = useRouter()
@@ -21,6 +22,7 @@ const PostPage = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
+  
 
   return (
     <>
@@ -32,16 +34,19 @@ const PostPage = () => {
           <div key={article.id}>
             <h2>{article.title}</h2>
             <div>
-            Description: {parse(article.description)}
+            {parse(article.description)}
             </div>
               <div>
                  {article?.articleBody?.map((content: ArticleBody) => {
+                  if (content.attrs === "level: 1") {
+
+                  }
                           return (
                             <div
                             key={content.type}
                             >
                               <div>
-                                {parse(content.contentHTML || '<p>Wrong Content</p>')}
+                                {parse(content.contentHTML || '<p>Wrong Content</p>')} <br />
                               </div>
                             </div>
                           )

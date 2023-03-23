@@ -1,8 +1,13 @@
 import { ReactNode } from 'react';
-import { Articles } from '../graphql/articles';
+import { Key } from 'readline';
+// import { Articles } from '../graphql/articles';
 // import  {articles,articleDetails, allArticles } from '../graphql/articles'
 
 export interface ArticleBody {
+  id: Key | null | undefined;
+  description(description: any): ReactNode;
+  articleBody: any;
+  title: ReactNode;
   type: string;
   contentHTML: string;
   attrs: string;
