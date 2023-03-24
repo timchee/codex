@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const ARTICLES_QUERY = gql`
-  query Articles {
-    codexguidearticlesCollection (offset: 0) {
+  query Articles  {
+    codexguidearticlesCollection  {
       items {
         id
         title

@@ -44,6 +44,7 @@ const PostPage = () => {
             <h1>{titles}</h1>
             <p></p>
 
+
             {articles.map((block: ArticleBody, index: number) => (
               <div key={index}>
                 {block.type === "paragraph" ? (
