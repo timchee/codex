@@ -53,7 +53,7 @@ const PostPage = () => {
 
           <br />
           <br />
-          {query.id}
+          {/* {query.id} */}
         </div>
       </section>
     </>

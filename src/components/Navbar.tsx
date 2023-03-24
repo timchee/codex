@@ -17,9 +17,7 @@ export default function Navbar() {
   const myClass = 'my-class';
   const combinedClassName = classNames("navbar__menu", myClass);
 
-  // const currentArticle = data.codexguidearticlesCollection.items.find(
-  //   (article: Article) => article.id === router.query.id
-  // );
+
   useEffect(() => {
     if (!loading) {
       console.log("Data loaded successfully", data);
@@ -30,7 +28,6 @@ export default function Navbar() {
 
 
   const idja = data.codexguidearticlesCollection.items.find((article: Article) => article.id === router.query.id)
-  const route = router.query.id
   
 
   return (
@@ -46,7 +43,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide/${route}`} className={isActive(`/userguide`) ? 'active' : ''}>
+              <Link href={`/userguide/${idja}`} className={isActive(`/userguide`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>
