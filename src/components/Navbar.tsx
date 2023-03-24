@@ -18,6 +18,7 @@ export default function Navbar() {
   const myClass = 'my-class';
   const combinedClassName = classNames("navbar__menu", myClass);
 
+<<<<<<< HEAD
 
   useEffect(() => {
     if (!loading) {
@@ -30,6 +31,8 @@ export default function Navbar() {
 
   const idja = data.codexguidearticlesCollection.items.find((article: Article) => article.id === router.query.id)
   
+=======
+>>>>>>> 9e7a34f (Modified the content main section)
   // const currentArticle = data.codexguidearticlesCollection.items.find(
   //   (article: Article) => article.id === router.query.id
   // );
@@ -54,7 +57,10 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e7a34f (Modified the content main section)
               <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>

@@ -36,6 +36,7 @@ export default function RightSideMenu() {
     }
   }
 
+<<<<<<< HEAD
   return (
     <section className="right--section">
       <div className="right--section__content">
@@ -56,3 +57,25 @@ export default function RightSideMenu() {
     </section>
   );
 }
+=======
+    // Filter the articleBody array to only include objects with type equal to "heading"
+    const headings = currentArticle.articleBody.filter(
+        (block: any) => block.type === "heading"
+    );
+
+    return (
+        <section className="right--section">
+            <div className="right--section__content">
+                <h6>Currently Viewing</h6>
+                <ul>
+                    {headings.map((heading: any, index: number) => (
+                    <li key={index}>
+                        <a href={`#${heading.slug}`} dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
+                    </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+    )
+}
+>>>>>>> 9e7a34f (Modified the content main section)
