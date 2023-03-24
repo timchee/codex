@@ -10,6 +10,7 @@ import { Suspense, useEffect } from "react";
 export default function Navbar() {
   const router = useRouter();
   const { query } = useRouter();
+
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
 
 
@@ -29,6 +30,16 @@ export default function Navbar() {
 
   const idja = data.codexguidearticlesCollection.items.find((article: Article) => article.id === router.query.id)
   
+  // const currentArticle = data.codexguidearticlesCollection.items.find(
+  //   (article: Article) => article.id === router.query.id
+  // );
+
+  let currentArticle: Article | undefined;
+  if (data && data.codexguidearticlesCollection) {
+    currentArticle = data.codexguidearticlesCollection.items.find(
+      (article: Article) => article.id === router.query.id
+    );
+  }
 
   return (
     <>
@@ -43,7 +54,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide/${idja}`} className={isActive(`/userguide`) ? 'active' : ''}>
+
+              <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>

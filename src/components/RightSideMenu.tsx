@@ -38,9 +38,11 @@ export default function RightSideMenu() {
             <div className="right--section__content">
                 <h6>Currently Viewing</h6>
                 <ul>
-                {headings.map((heading: any, index: number) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
-                ))}
+                    {headings.map((heading: any, index: number) => (
+                    <li key={index}>
+                        <a href={`#${heading.slug}`} dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
+                    </li>
+                    ))}
                 </ul>
             </div>
         </section>
