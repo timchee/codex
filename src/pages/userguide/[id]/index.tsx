@@ -49,7 +49,7 @@ export default function UserGuide(props: Props) {
 
       <Navbar />
       
-      <LeftSideMenu />
+      <LeftSideMenu hidden={""} element={undefined} />
 
       <main className="main-section">
         <div>

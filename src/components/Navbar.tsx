@@ -8,15 +8,23 @@ import { Article, ArticleBody } from "../../interfaces/IMain";
 export default function Navbar() {
   const router = useRouter();
   const { query } = useRouter();
+
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
 
   const isActive = (pathname: string) => router.pathname === pathname;
   const myClass = 'my-class';
   const combinedClassName = classNames("navbar__menu", myClass);
 
-  const currentArticle = data.codexguidearticlesCollection.items.find(
-    (article: Article) => article.id === router.query.id
-  );
+  // const currentArticle = data.codexguidearticlesCollection.items.find(
+  //   (article: Article) => article.id === router.query.id
+  // );
+
+  let currentArticle: Article | undefined;
+  if (data && data.codexguidearticlesCollection) {
+    currentArticle = data.codexguidearticlesCollection.items.find(
+      (article: Article) => article.id === router.query.id
+    );
+  }
 
   return (
     <>
@@ -31,7 +39,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide/${data.codexguidearticlesCollection.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
+              <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>
