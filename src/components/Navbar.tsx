@@ -24,7 +24,7 @@ export default function Navbar() {
       console.log("Data loaded successfully", data);
     }
   }, [loading]);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p></p>;
   if (error) return <p>Error: {error.message}</p>;
 
 
@@ -55,7 +55,7 @@ export default function Navbar() {
             </li>
             <li className="navbar__link">
 
-              <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
+              <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${currentArticle?.id}`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>

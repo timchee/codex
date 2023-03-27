@@ -8,6 +8,7 @@ import { Article, ArticleBody } from "../../../../interfaces/IMain";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
 import Link from "next/link";
 
+
 const PostPage = () => {
   const { query } = useRouter();
   const router = useRouter();
@@ -20,7 +21,7 @@ const PostPage = () => {
     }
   }, [loading]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>;
 
   //find article with the mmatching ID
@@ -30,39 +31,39 @@ const PostPage = () => {
   if (!currentArticle) {
     return <p></p>;
   }
-  
+
   const titles = currentArticle.title
 
   const articles = currentArticle.articleBody;
 
   return (
-        <>
-        <section className="main-content">
-          <div className="main-content__container">
-            <Breadcrumbs />
+    <>
+      <section className="main-content">
+        <div className="main-content__container">
+          <Breadcrumbs />
 
-            <h1>{titles}</h1>
-            <p></p>
+          <h1>{titles}</h1>
+          <p></p>
 
 
-            {articles.map((block: ArticleBody, index: number) => (
-              <div key={index}>
-                {block.type === "paragraph" ? (
-                  <p dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : block.type === "heading" ? (
-                  <h2 dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) :  block.type === "bullet_list" ? (
-                  <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : block.type === "ordered_list" ? (
-                  <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : block.type === "codex_factbox" ? (
-                  <div className="factbox" dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </section>
-      </>
+          {articles.map((block: ArticleBody, index: number) => (
+            <div key={index}>
+              {block.type === "paragraph" ? (
+                <p dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
+              ) : block.type === "heading" ? (
+                <h2 dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
+              ) : block.type === "bullet_list" ? (
+                <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
+              ) : block.type === "ordered_list" ? (
+                <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
+              ) : block.type === "codex_factbox" ? (
+                <div className="factbox" dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
+              ) : null}
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

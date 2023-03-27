@@ -58,7 +58,7 @@
   left: 30px;
 }
 
-.small--span .active {
+.left--section .spann p{
   color: #206ED5;
   /* display: none; */
 }
@@ -67,13 +67,10 @@
 
 
 
-
 /* ////////////////// RIGHT SECTION ///////////////////////// */
 
 .right--section {
   width: 350px;
-  /* height: calc(100% - var(--footer-height)); */
-  /* height: 100%; */
   background-color: #ffffff;
   position: fixed;
   right: 0;

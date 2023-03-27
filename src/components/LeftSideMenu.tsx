@@ -33,30 +33,31 @@ export default function LeftSideMenu(props: Props) {
 
   if (loading) return <p></p>;
   if (error) return <p>Error: {error.message}</p>;
-  
+
 
 
   const isActive = (pathname: string) => router.pathname === pathname;
-  const myClass = 'my-class';
-  const combinedClassName = classNames("navbar__menu", myClass);
+  const myClasss = 'my-class';
+  const combinedClassName = classNames("listat", myClasss);
+
+   const currentArticle = data.codexguidearticlesCollection.items.find(
+    (article: Article) => article.id === router.query.id
+  );
 
   return (
     <aside className="left--section">
-      <div className="left--section__components">
+      <div className="left--section__components ">
         <h6>User Guide</h6>
-        <div className="span--div">
-          {/* <div className="span"></div> */}
-
-          <div className="lists">
-            {data.codexguidearticlesCollection.items.map((article: Article) => (
-              <div key={article.id}>
-                <Link href={`../userguide/${article.id}`} >
-                <div className="small--span" ></div>
-                  <p className={isActive(`../userguide/${article.id}`) ? 'active' : ''}>{article.title}</p>
-                </Link>
-              </div>
-            ))}
-          </div>
+        <div className="lists">
+          {data.codexguidearticlesCollection.items.map((article: Article) => (
+            <div key={article.id}>
+              <Link href={`${article.id}`}
+                className={isActive(`${article.id}`) ? 'spann' : ''} >
+                <div className="small--span"></div>
+                <p>{article.title}</p>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </aside>
