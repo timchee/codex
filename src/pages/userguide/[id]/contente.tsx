@@ -5,6 +5,13 @@ import { Suspense, useEffect } from "react";
 import { ARTICLES_QUERY } from "../../../../graphql/articles";
 import { Article, ArticleBody } from "../../../../interfaces/IMain";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
+import { BulletList, FactBox, Heading, Media, OrderedList, Paragraph } from "../../../helpers/article";
+
+interface IProps {
+  attrs?: any;
+  contentHTML?: string;
+  level?: number;
+}
 
 const PostPage = () => {
   const { query } = useRouter();
@@ -37,40 +44,39 @@ const PostPage = () => {
       <div className="main-content__container">
         <Breadcrumbs />
 
-        <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        <h1 className="main-content__title">{title}</h1>
+        <div className="main-content__description" dangerouslySetInnerHTML={{ __html: description }} />
 
         {articleBody.map((block: ArticleBody, index: number) => {
           const { type, contentHTML, attrs } = block;
           if (type === "paragraph") {
             return (
-              <p key={index} style={attrs}>
-                {block.contentHTML && parse(block.contentHTML)}
-              </p>
+              <Paragraph key={index} attrs={attrs} contentHTML={contentHTML} />
             );
           } else if (type === "heading") {
+            const { level } = attrs;
             return (
-              <h1 key={index} style={attrs}>
-                {block.contentHTML && parse(block.contentHTML)}
-              </h1>
+              <Heading key={index} attrs={attrs} contentHTML={contentHTML} level={level} />
             );
-          } else if (type === "bullet_list" || type === "ordered_list") {
+          } else if (type === "bullet_list") {
             return (
-              <div key={index} style={attrs}>
-                {block.contentHTML && parse(block.contentHTML)}
-              </div>
+              <BulletList key={index} attrs={attrs} contentHTML={contentHTML} />
+            );
+          } else if (type === "ordered_list") {
+            return (
+              <OrderedList key={index} attrs={attrs} contentHTML={contentHTML} />
             );
           } else if (type === "codex_factbox") {
             return (
-              <div key={index} style={attrs} className="factbox">
-                {block.contentHTML && parse(block.contentHTML)}
-              </div>
+              <FactBox
+                key={index}
+                attrs={attrs}
+                contentHTML={contentHTML}
+              />
             );
           } else if (type === "codex_media") {
             return (
-              <div key={index} style={attrs} className="media">
-                {block.contentHTML && parse(block.contentHTML)}
-              </div>
+              <Media key={index} attrs={attrs} contentHTML={contentHTML} />
             );
           } else {
             return null;
