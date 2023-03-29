@@ -2,19 +2,25 @@ import React, { FC } from "react";
 import parse from "html-react-parser";
 
 interface IProps {
-  attrs?: any;
+  attrs?: {
+    media?: {
+      id: string;
+      type: string;
+    }[];
+    blockId?: string;
+    src?: string;
+    align?: string;
+    caption?: string;
+    width?: string;
+  };
   contentHTML?: string;
   level?: number;
 }
 
-export const Heading: FC<IProps> = ({ attrs, contentHTML, level }) => {
-  const HeadingTag:string = `h${level}`;
-  return (
-    <HeadingTag style={attrs} className={`block heading h${level}`}>
-      {contentHTML && parse(contentHTML)}
-    </HeadingTag>
-  );
-};
+interface IMedia {
+  id: string;
+  type: string;
+}
 
 export const Paragraph: FC<IProps> = ({ attrs, contentHTML }) => (
   <p style={attrs} className="block paragraph">
@@ -50,8 +56,32 @@ export const FactBox: FC<IProps> = ({ attrs, contentHTML }) => (
   </div>
 );
 
-export const Media: FC<IProps> = ({ attrs, contentHTML }) => (
-  <img style={attrs} className="block codex-media">
-    {contentHTML && parse(contentHTML)}
-  </img>
-);
+export const Heading: FC<IProps> = ({ attrs, contentHTML, level }) => {
+  const HeadingTag: string = `h${level}`;
+
+  return (
+    <HeadingTag style={attrs} className={`block heading h${level}`}>
+      {contentHTML && parse(contentHTML)}
+    </HeadingTag>
+  );
+};
+
+export const CodexImage: FC<IProps> = ({ attrs }) => {
+  let mediaArray: IMedia[] = [];
+
+  if (attrs && attrs.media) {
+    mediaArray = attrs.media;
+  }
+  
+  return (
+      <div className="codex-media" style={{ textAlign: attrs?.align ?? undefined }} >
+      {mediaArray.map((media) => (
+        <img
+          key={media.id}
+          src={`https://codex-dev.codexcdn.net/assets/${media.id}.jpg?width=560&r=fill`}
+          alt={attrs?.caption}
+        />
+      ))}
+      </div>
+  );
+};

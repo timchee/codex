@@ -5,7 +5,7 @@ import { Suspense, useEffect } from "react";
 import { ARTICLES_QUERY } from "../../../../graphql/articles";
 import { Article, ArticleBody } from "../../../../interfaces/IMain";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
-import { BulletList, FactBox, Heading, Media, OrderedList, Paragraph } from "../../../helpers/article";
+import { BulletList, CodexImage, FactBox, Heading, OrderedList, Paragraph } from "../../../helpers/article";
 
 interface IProps {
   attrs?: any;
@@ -76,7 +76,7 @@ const PostPage = () => {
             );
           } else if (type === "codex_media") {
             return (
-              <Media key={index} attrs={attrs} contentHTML={contentHTML} />
+              <CodexImage key={index} attrs={attrs} contentHTML={contentHTML} />
             );
           } else {
             return null;

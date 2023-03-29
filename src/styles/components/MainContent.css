@@ -33,7 +33,7 @@
     margin-bottom: 10px;
 }
 .main-content ul {
-    margin-left: 40px;
+    margin-left: 50px;
     margin-top: 6px;
 }
 .main-content .ordered-list ul li {
@@ -41,4 +41,10 @@
 }
 .main-content .bullet-list ul li {
     list-style-type: disc;
+}
+.codex-media {
+    margin-top: 20px;
+}
+.codex-image img {
+    margin-top: 20px;
 }
