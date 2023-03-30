@@ -85,6 +85,7 @@ const PostPage = () => {
       </div>
     </section>
   </>
+
   );
 };
 
