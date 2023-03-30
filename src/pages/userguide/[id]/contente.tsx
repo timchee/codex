@@ -1,23 +1,32 @@
-import parse from "html-react-parser";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { Suspense, useEffect } from "react";
-import { ARTICLES_QUERY } from "../../../../graphql/articles";
-import { Article, ArticleBody } from "../../../../interfaces/IMain";
+import { ARTICLE_QUERY } from "../../../../graphql/articles";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
 import { BulletList, CodexImage, FactBox, Heading, OrderedList, Paragraph } from "../../../helpers/article";
-
-interface IProps {
-  attrs?: any;
-  contentHTML?: string;
-  level?: number;
-}
 
 const PostPage = () => {
   const { query } = useRouter();
   const router = useRouter();
 
-  const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
+  const { loading, error, data, refetch } = useQuery(ARTICLE_QUERY, {
+    variables: {
+      id: router.query.id
+    }
+  });
+
+  // ['id1', 'id2']
+  // useQuery(MEDIAS_QUERY, {
+  //   variables: {
+  //     ids: ids
+  //   }
+  // })
+
+  // let medias = {
+  //   id1: {
+
+  //   }
+  // }
 
   useEffect(() => {
     if (!loading) {
@@ -29,9 +38,8 @@ const PostPage = () => {
   if (error) return <p>Error: {error.message}</p>;
 
   //find article with the matching ID
-  const currentArticle = data.codexguidearticlesCollection.items.find(
-    (article: Article) => article.id === router.query.id
-  );
+  const currentArticle = data.codexguidearticles
+
   if (!currentArticle) {
     return <p></p>;
   }
@@ -47,7 +55,7 @@ const PostPage = () => {
         <h1 className="main-content__title">{title}</h1>
         <div className="main-content__description" dangerouslySetInnerHTML={{ __html: description }} />
 
-        {articleBody.map((block: ArticleBody, index: number) => {
+        {articleBody.map((block: any, index: number) => {
           const { type, contentHTML, attrs } = block;
           if (type === "paragraph") {
             return (

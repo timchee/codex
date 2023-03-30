@@ -1,19 +1,17 @@
 import { useRouter } from "next/router";
-import { useQuery, gql } from "@apollo/client";
-import { ARTICLES_QUERY } from "../../graphql/articles";
-import { Article } from "../../interfaces/IMain";
+import { useQuery } from "@apollo/client";
+import { ARTICLE_QUERY } from "../../graphql/articles";
 
 export default function Breadcrumbs() {
     const router = useRouter();
-    const { loading, error, data } = useQuery(ARTICLES_QUERY);
-  
-    if (loading) return <p></p>;
-    if (error) return <p></p>;
-  
-    // Find the article with the matching ID
-    const currentArticle = data.codexguidearticlesCollection.items.find(
-      (article: Article) => article.id === router.query.id
-    );
+    
+    const { data } = useQuery(ARTICLE_QUERY, {
+      variables: {
+        id: router.query.id
+      }
+    });
+
+    const currentArticle = data.codexguidearticles
   
     return (
       <div className="breadcrumbs">
