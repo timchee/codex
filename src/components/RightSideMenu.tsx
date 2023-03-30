@@ -12,7 +12,7 @@ export default function RightSideMenu() {
 
     useEffect(() => {
       if (!loading) {
-        console.log("Data loaded successfully", data);
+        // console.log("Data loaded successfully", data);
       }
     }, [loading]);
   
@@ -41,7 +41,7 @@ export default function RightSideMenu() {
                 <ul>
                     {headings.map((heading: any, index: number) => (
                     <li key={index}>
-                        <a href={`#${heading.slug}`} dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
+                        <a href={`#${heading.id}`} dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
                     </li>
                     ))}
                 </ul>

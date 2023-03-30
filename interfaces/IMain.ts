@@ -29,6 +29,11 @@ export interface ArticlesData {
   };
 }
 
+export interface FirstEntry{
+  map: any;
+  id: string;
+}
+
 // interface MainProps  {
 //     id: string;
 //     title: string;
