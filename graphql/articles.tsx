@@ -17,13 +17,3 @@ export const ARTICLES_QUERY = gql`
     }
   }
 `;
-export const FIRTS_ENTRY = gql`
-query Entry{
-  codexguidearticlesCollection (limit: 1){
-    items {
-      id
-    }
-  }
-
-}
-`;

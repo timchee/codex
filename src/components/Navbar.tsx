@@ -6,15 +6,11 @@ import { ARTICLES_QUERY } from "../../graphql/articles";
 import { Article, ArticleBody } from "../../interfaces/IMain";
 import parse from "html-react-parser";
 import { Suspense, useEffect } from "react";
-import { FIRTS_ENTRY } from "../../graphql/articles";
-import { FirstEntry } from "../../interfaces/IMain";
 
 export default function Navbar() {
   const router = useRouter();
-  const { query } = useRouter();
 
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
-  const firstEntry = useQuery(FIRTS_ENTRY);
 
 
   const isActive = (pathname: string) => router.pathname === pathname;
@@ -31,9 +27,9 @@ export default function Navbar() {
   if (error) return <p>Error: {error.message}</p>;
 
 
-  
-  const idja = firstEntry.data.codexguidearticlesCollection.items[0].id
-  
+
+  const firstID = data?.codexguidearticlesCollection?.items[0]?.id
+
 
   let currentArticle: Article | undefined;
   if (data && data.codexguidearticlesCollection) {
@@ -55,8 +51,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide/${idja}`}
-                className={router.pathname === `/userguide/[id]` ? "active" : ""}>
+              <Link href={`/userguide/${firstID}`}
+                className={router.pathname === `/userguide/[id]` && "active"}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>
