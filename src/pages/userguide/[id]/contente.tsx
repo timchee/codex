@@ -13,6 +13,7 @@ interface IProps {
   level?: number;
 }
 
+
 const PostPage = () => {
   const { query } = useRouter();
   const router = useRouter();
@@ -25,7 +26,7 @@ const PostPage = () => {
     }
   }, [loading]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>;
 
   //find article with the matching ID
@@ -35,6 +36,7 @@ const PostPage = () => {
   if (!currentArticle) {
     return <p></p>;
   }
+
 
   const { title, description, articleBody } = currentArticle;
 
@@ -46,6 +48,7 @@ const PostPage = () => {
 
         <h1 className="main-content__title">{title}</h1>
         <div className="main-content__description" dangerouslySetInnerHTML={{ __html: description }} />
+
 
         {articleBody.map((block: ArticleBody, index: number) => {
           const { type, contentHTML, attrs } = block;
@@ -85,6 +88,7 @@ const PostPage = () => {
       </div>
     </section>
   </>
+
 
   );
 };

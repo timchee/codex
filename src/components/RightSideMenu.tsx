@@ -19,6 +19,7 @@ export default function RightSideMenu() {
     if (loading) return <p></p>;
     if (error) return <p></p>;
 
+
     // Find the article with the matching ID
     const currentArticle = data.codexguidearticlesCollection.items.find(
         (article: Article) => article.id === router.query.id
