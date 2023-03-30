@@ -6,6 +6,7 @@
 @import url("./components/Navbar.css");
 @import url("./components/UserGuide.css");
 @import url("./components/Breadcrumbs.css");
+@import url("./components/MainContent.css");
 
 :root {
   --max-width: 1140px;

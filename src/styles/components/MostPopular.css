@@ -9,7 +9,6 @@
     gap: 30px;
 }
 .most-popular__title {
-    color: var(--color-heading);
     margin-bottom: 20px;
 }
 .most-popular__card {

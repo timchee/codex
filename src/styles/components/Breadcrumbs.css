@@ -3,7 +3,6 @@
     margin-bottom: 40px;
     color: var(--color-heading);
 }
-
 .breadcrumbs span:nth-child(even) {
     color: var(--breadcrumbs-arrow);
     padding-left: 14px;
