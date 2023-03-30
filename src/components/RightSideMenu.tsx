@@ -17,7 +17,8 @@ export default function RightSideMenu() {
     }, [loading]);
   
     if (loading) return <p></p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (error) return <p></p>;
+
 
     // Find the article with the matching ID
     const currentArticle = data.codexguidearticlesCollection.items.find(

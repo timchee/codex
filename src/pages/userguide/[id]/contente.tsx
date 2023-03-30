@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import parse from "html-react-parser";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
@@ -6,7 +5,13 @@ import { Suspense, useEffect } from "react";
 import { ARTICLES_QUERY } from "../../../../graphql/articles";
 import { Article, ArticleBody } from "../../../../interfaces/IMain";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
-import Link from "next/link";
+import { BulletList, CodexImage, FactBox, Heading, OrderedList, Paragraph } from "../../../helpers/article";
+
+interface IProps {
+  attrs?: any;
+  contentHTML?: string;
+  level?: number;
+}
 
 
 const PostPage = () => {
@@ -24,7 +29,7 @@ const PostPage = () => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>;
 
-  //find article with the mmatching ID
+  //find article with the matching ID
   const currentArticle = data.codexguidearticlesCollection.items.find(
     (article: Article) => article.id === router.query.id
   );
@@ -32,38 +37,59 @@ const PostPage = () => {
     return <p></p>;
   }
 
-  const titles = currentArticle.title
 
-  const articles = currentArticle.articleBody;
+  const { title, description, articleBody } = currentArticle;
 
   return (
     <>
-      <section className="main-content">
-        <div className="main-content__container">
-          <Breadcrumbs />
+    <section className="main-content">
+      <div className="main-content__container">
+        <Breadcrumbs />
 
-          <h1>{titles}</h1>
-          <p></p>
+        <h1 className="main-content__title">{title}</h1>
+        <div className="main-content__description" dangerouslySetInnerHTML={{ __html: description }} />
 
 
-          {articles.map((block: ArticleBody, index: number) => (
-            <div key={index}>
-              {block.type === "paragraph" ? (
-                <p dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-              ) : block.type === "heading" ? (
-                <h2 dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-              ) : block.type === "bullet_list" ? (
-                <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-              ) : block.type === "ordered_list" ? (
-                <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-              ) : block.type === "codex_factbox" ? (
-                <div className="factbox" dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-              ) : null}
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+        {articleBody.map((block: ArticleBody, index: number) => {
+          const { type, contentHTML, attrs } = block;
+          if (type === "paragraph") {
+            return (
+              <Paragraph key={index} attrs={attrs} contentHTML={contentHTML} />
+            );
+          } else if (type === "heading") {
+            const { level } = attrs;
+            return (
+              <Heading key={index} attrs={attrs} contentHTML={contentHTML} level={level} />
+            );
+          } else if (type === "bullet_list") {
+            return (
+              <BulletList key={index} attrs={attrs} contentHTML={contentHTML} />
+            );
+          } else if (type === "ordered_list") {
+            return (
+              <OrderedList key={index} attrs={attrs} contentHTML={contentHTML} />
+            );
+          } else if (type === "codex_factbox") {
+            return (
+              <FactBox
+                key={index}
+                attrs={attrs}
+                contentHTML={contentHTML}
+              />
+            );
+          } else if (type === "codex_media") {
+            return (
+              <CodexImage key={index} attrs={attrs} contentHTML={contentHTML} />
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
+    </section>
+  </>
+
+
   );
 };
 

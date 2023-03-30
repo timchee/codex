@@ -5,7 +5,6 @@
 }
 .quick-links__title {
     margin-bottom: 20px;
-    color: var(--heading-color);
 }
 .quick-links__items {
     display: flex;
