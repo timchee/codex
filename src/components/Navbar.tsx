@@ -6,12 +6,15 @@ import { ARTICLES_QUERY } from "../../graphql/articles";
 import { Article, ArticleBody } from "../../interfaces/IMain";
 import parse from "html-react-parser";
 import { Suspense, useEffect } from "react";
+import { FIRTS_ENTRY } from "../../graphql/articles";
+import { FirstEntry } from "../../interfaces/IMain";
 
 export default function Navbar() {
   const router = useRouter();
   const { query } = useRouter();
 
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
+  const firstEntry = useQuery(FIRTS_ENTRY);
 
 
   const isActive = (pathname: string) => router.pathname === pathname;
@@ -21,23 +24,21 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!loading) {
-      console.log("Data loaded successfully", data);
+      // console.log("Data loaded successfully", data);
     }
   }, [loading]);
   if (loading) return <p></p>;
   if (error) return <p>Error: {error.message}</p>;
 
 
-  const idja = data.codexguidearticlesCollection.items.find((article: Article) => article.id === router.query.id)
   
-  // const currentArticle = data.codexguidearticlesCollection.items.find(
-  //   (article: Article) => article.id === router.query.id
-  // );
+  const idja = firstEntry.data.codexguidearticlesCollection.items[0].id
+  
 
   let currentArticle: Article | undefined;
   if (data && data.codexguidearticlesCollection) {
     currentArticle = data.codexguidearticlesCollection.items.find(
-      (article: Article) => article.id === router.query.id
+      (article: Article) => article.id === router.pathname
     );
   }
 
@@ -54,8 +55,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-
-              <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${currentArticle?.id}`) ? 'active' : ''}>
+              <Link href={`/userguide/${idja}`}
+                className={router.pathname === `/userguide/[id]` ? "active" : ""}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>
@@ -65,7 +66,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href="/" className={isActive('') ? 'active' : ''}>
+              <Link href="../components.Playground" className={isActive('/Playground') ? 'active' : ''}>
                 Playground<div className="under--line"></div>
               </Link>
             </li>

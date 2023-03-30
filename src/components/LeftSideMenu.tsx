@@ -1,21 +1,15 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { useLocation } from 'react-router-dom';
 import { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { ARTICLES_QUERY } from "../../graphql/articles";
 import { Article } from "../../interfaces/IMain";
-import PostPage from "../pages/userguide/[id]";
 import classNames from "classnames";
 import router from "next/router";
+import Articles from "./MainSection";
 
-interface Props {
-  hidden: string;
-  element: JSX.Element;
-}
 
-export default function LeftSideMenu(props: Props) {
-  const { hidden, element } = props;
+export default function LeftSideMenu() {
   const [isClassAdded, setIsClassAdded] = useState<boolean>(false);
 
   const handleClick = () => {
@@ -27,22 +21,24 @@ export default function LeftSideMenu(props: Props) {
 
   useEffect(() => {
     if (!loading) {
-      console.log("Data loaded successfully", data);
+      // console.log("Data loaded successfully", data);
     }
   }, [loading]);
 
   if (loading) return <p></p>;
   if (error) return <p>Error: {error.message}</p>;
 
+  const currentPath = router.asPath;
+  const currentArticleId = currentPath.substring(currentPath.lastIndexOf("/") + 1);
 
+  console.log(currentArticleId); // should log the current article id
 
-  const isActive = (pathname: string) => router.pathname === pathname;
-  const myClasss = 'my-class';
-  const combinedClassName = classNames("listat", myClasss);
+  const isActive = (pathname: string) => {
+    const path = `/userguide/${pathname}`;
+    return currentPath.startsWith(path);
+  };
 
-   const currentArticle = data.codexguidearticlesCollection.items.find(
-    (article: Article) => article.id === router.query.id
-  );
+  console.log(isActive(currentArticleId)); // should log true or false
 
   return (
     <aside className="left--section">
@@ -50,9 +46,8 @@ export default function LeftSideMenu(props: Props) {
         <h6>User Guide</h6>
         <div className="lists">
           {data.codexguidearticlesCollection.items.map((article: Article) => (
-            <div key={article.id}>
-              <Link href={`${article.id}`}
-                className={isActive(`${article.id}`) ? 'spann' : ''} >
+            <div key={article.id} className={isActive(article.id) ? 'spann' : ''}>
+              <Link href={`/userguide/${article.id}`}>
                 <div className="small--span"></div>
                 <p>{article.title}</p>
               </Link>
