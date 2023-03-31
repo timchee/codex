@@ -9,6 +9,7 @@ import { Suspense, useEffect } from "react";
 
 export default function Navbar() {
   const router = useRouter();
+  const { query } = useRouter();
 
   const { loading, error, data, refetch } = useQuery(ARTICLES_QUERY);
 
@@ -20,21 +21,23 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!loading) {
-      // console.log("Data loaded successfully", data);
+      console.log("Data loaded successfully", data);
     }
   }, [loading]);
-  if (loading) return <p></p>;
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
 
-
-  const firstID = data?.codexguidearticlesCollection?.items[0]?.id
-
+  const idja = data.codexguidearticlesCollection.items.find((article: Article) => article.id === router.query.id)
+  
+  // const currentArticle = data.codexguidearticlesCollection.items.find(
+  //   (article: Article) => article.id === router.query.id
+  // );
 
   let currentArticle: Article | undefined;
   if (data && data.codexguidearticlesCollection) {
     currentArticle = data.codexguidearticlesCollection.items.find(
-      (article: Article) => article.id === router.pathname
+      (article: Article) => article.id === router.query.id
     );
   }
 
@@ -51,8 +54,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href={`/userguide/${firstID}`}
-                className={router.pathname === `/userguide/[id]` && "active"}>
+              <Link href={`/userguide/${currentArticle?.id}`} className={isActive(`/userguide/${query.id}`) ? 'active' : ''}>
                 User Guide<div className="under--line"></div>
               </Link>
             </li>
@@ -62,7 +64,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar__link">
-              <Link href="../components.Playground" className={isActive('/Playground') ? 'active' : ''}>
+              <Link href="/" className={isActive('') ? 'active' : ''}>
                 Playground<div className="under--line"></div>
               </Link>
             </li>

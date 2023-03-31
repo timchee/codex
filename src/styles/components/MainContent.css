@@ -12,6 +12,9 @@
 .paragraph {
     margin-bottom: 14px;
 }
+.ordered-list {
+    margin-bottom: 14px;
+}
 .factbox {
     color: var(--ifm-color-secondary);
     background-color: #F0F9FD;
