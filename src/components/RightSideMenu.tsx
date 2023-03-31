@@ -12,12 +12,13 @@ export default function RightSideMenu() {
 
     useEffect(() => {
       if (!loading) {
-        // console.log("Data loaded successfully", data);
       }
     }, [loading]);
   
     if (loading) return <p></p>;
     if (error) return <p></p>;
+    console.log("Data loaded successfully", 
+    data.codexguidearticlesCollection.items[0].articleBody[0].attrs.level);
 
 
     // Find the article with the matching ID
@@ -41,7 +42,8 @@ export default function RightSideMenu() {
                 <ul>
                     {headings.map((heading: any, index: number) => (
                     <li key={index}>
-                        <a href={`#${heading.id}`} dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
+                        <a href={`#${heading.id}`} 
+                        dangerouslySetInnerHTML={{ __html: heading.contentHTML }} />
                     </li>
                     ))}
                 </ul>

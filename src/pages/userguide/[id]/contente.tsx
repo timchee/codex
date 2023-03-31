@@ -22,7 +22,7 @@ const PostPage = () => {
 
   useEffect(() => {
     if (!loading) {
-      console.log("Data loaded successfully", data);
+      console.log("Data loaded successfully");
     }
   }, [loading]);
 
