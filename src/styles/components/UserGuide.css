@@ -102,6 +102,9 @@ html{
 .right--section__content ul a:hover {
   color: var(--ifm-color-primary);
 }
+.right--section ul li a {
+  font-weight: normal;
+}
 
 @media screen and (max-width: 600px) {
 

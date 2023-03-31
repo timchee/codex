@@ -2,24 +2,19 @@ import Navbar from "../../../components/Navbar";
 import Head from "next/head";
 import React, { useState } from "react";
 import Footer from "../../../components/Footer";
-import Articles from "../../../components/MainSection";
 import LeftSideMenu from "../../../components/LeftSideMenu";
 import RightSideMenu from "../../../components/RightSideMenu";
 import PostPage from "./contente";
+import Pagination from "../../../components/Pagination";
 
-interface Props {
-  hidden: string;
-  element: JSX.Element;
-}
-
-export default function UserGuide(props: Props) {
-  const { hidden, element } = props;
+export default function UserGuide() {
   const [isClassAdded, setIsClassAdded] = useState<boolean>(false);
 
   const handleClick = () => {
     setIsClassAdded(!isClassAdded);
     console.log(isClassAdded);
   };
+  
   return (
     <>
       <Head>
@@ -53,7 +48,6 @@ export default function UserGuide(props: Props) {
 
       <main className="main-section">
         <div>
-            {/* <Articles /> */}
             <PostPage />
             <RightSideMenu />
         </div>
