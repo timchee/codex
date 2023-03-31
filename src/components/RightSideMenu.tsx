@@ -11,10 +11,12 @@ export default function RightSideMenu() {
     },
   });
 
+    useEffect(() => {
+
   if (loading) {
     return <div></div>
   }
-
+}
   if (error || !data || !data.codexguidearticles) {
     return <div></div>
   }
