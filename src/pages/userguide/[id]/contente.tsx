@@ -44,7 +44,6 @@ const PostPage = () => {
     return <p></p>;
   }
 
-<<<<<<< HEAD
   const { title, description, articleBody } = currentArticle;
 
   return (
@@ -95,37 +94,6 @@ const PostPage = () => {
     </section>
   </>
 
-=======
-  const articles = currentArticle.articleBody;
-
-  return (
-        <>
-        <section className="main-content">
-          <div className="main-content__container">
-            <Breadcrumbs />
-
-            <h1>{titles}</h1>
-            <p></p>
-
-            {articles.map((block: ArticleBody, index: number) => (
-              <div key={index}>
-                {block.type === "paragraph" ? (
-                  <p dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : block.type === "heading" ? (
-                  <h2 dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) :  block.type === "bullet_list" ? (
-                  <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : block.type === "ordered_list" ? (
-                  <li dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : block.type === "codex_factbox" ? (
-                  <div className="factbox" dangerouslySetInnerHTML={{ __html: block.contentHTML }} />
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </section>
-      </>
->>>>>>> 9e7a34f (Modified the content main section)
   );
 };
 
