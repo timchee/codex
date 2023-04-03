@@ -5,11 +5,16 @@ export const ARTICLES_QUERY = gql`
     asset(id: "as8iCoNjMybJv3anV") {
       url
     }
-    codexguidearticlesCollection {
+    codexguidearticlesCollection (
+      order: { number: ASC },
+      where: { number: { exists: true }}
+    )
+    {
       items {
         id
         title
         description
+        number
       }
     }
   }

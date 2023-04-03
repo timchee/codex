@@ -1,9 +1,13 @@
+/*==================== ENTRIES FIELDS AND BLOCKS ====================*/
 .main-content__title {
     margin-bottom: 14px;
     font-size: 36px;
 }
 .main-content__description {
     margin-bottom: 40px;
+}
+.main-content p {
+    color: var(--color-heading);
 }
 .heading {
     margin-top: 40px;
@@ -50,4 +54,46 @@
 }
 .codex-image img {
     margin-top: 20px;
+}
+table {
+    border-collapse: collapse;
+    /* width: 100%; */
+}
+td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    /* height: 50px; */
+}
+
+/*==================== PAGINATION ====================*/
+.pagination {
+    margin-top: 60px;
+}
+.pagination__container {
+    max-width: 800px;
+    margin: auto;
+}
+.pagination__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.pagination__arrow {
+    color: var(--arrow-color);
+}
+.pagination__arrow:nth-child(1) {
+    margin-right: 12px;
+}
+.pagination__arrow:nth-child(2) {
+    margin-left: 12px;
+}
+.pagination__link {
+    color: #7483A1;
+    font-size: 12px;
+}
+.pagination__button a {
+    display: flex;
+    align-items: center;
+}
+.pagination__button:hover a, .pagination__button:hover span {
+    color: var(--ifm-color-primary);
 }

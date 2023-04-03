@@ -59,6 +59,12 @@ export const Heading: FC<{ attrs: any; contentHTML: string; level: number; onHea
   );
 };
 
+export const Table: FC<{ attrs: any; contentHTML: string }> = ({ attrs, contentHTML }) => (
+  <table style={attrs} className="block table">
+      {contentHTML && parse(contentHTML)}
+  </table>
+);
+
 export const CodexImage: FC<{ attrs: any }> = ({ attrs }) => {
   let mediaArray: any[] = [];
 
@@ -79,10 +85,10 @@ export const CodexImage: FC<{ attrs: any }> = ({ attrs }) => {
   );
 };
 
-export const CodexMediaOne: FC<{ asset: { url: string } }> = ({ asset }) => {
-  return (
-    <div>
-      <img src={asset.url} alt="Asset" />
-    </div>
-  );
-};
+// export const CodexMediaOne: FC<{ asset: { url: string } }> = ({ asset }) => {
+//   return (
+//     <div>
+//       <img src={asset.url} alt="Asset" />
+//     </div>
+//   );
+// };

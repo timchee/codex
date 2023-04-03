@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import { Suspense, useEffect } from "react";
 import { ARTICLE_QUERY } from "../../../../graphql/articles";
 import Breadcrumbs from "../../../components/Breadcrumbs ";
-import { BulletList, CodexImage, FactBox, Heading, OrderedList, Paragraph } from "../../../helpers/article";
+import Pagination from "../../../components/Pagination";
+import { BulletList, CodexImage, FactBox, Heading, OrderedList, Paragraph, Table } from "../../../helpers/article";
 
 const PostPage = () => {
   const { query } = useRouter();
@@ -37,7 +38,6 @@ const PostPage = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  //find article with the matching ID
   const currentArticle = data.codexguidearticles
 
   if (!currentArticle) {
@@ -86,11 +86,16 @@ const PostPage = () => {
             return (
               <CodexImage key={index} attrs={attrs} contentHTML={contentHTML} />
             );
+          } else if (type === "table") {
+            return (
+              <Table key={index} attrs={attrs} contentHTML={contentHTML} />
+            );
           } else {
             return null;
           }
         })}
       </div>
+      <Pagination />
     </section>
   </>
 

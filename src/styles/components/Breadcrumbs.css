@@ -4,7 +4,7 @@
     color: var(--color-heading);
 }
 .breadcrumbs span:nth-child(even) {
-    color: var(--breadcrumbs-arrow);
+    color: var(--arrow-color);
     padding-left: 14px;
     padding-right: 14px;
 }
